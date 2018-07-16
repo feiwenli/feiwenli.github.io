@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://example.com/1/01/2018-07-15/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/1/01/2018-07-13/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2018/07/7-11-%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2018-07-13T17:14:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2018/07/7-12-%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2018-07-13T17:14:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/about/</loc>
+    <lastmod>2018-07-13T17:11:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://example.com/es/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://example.com/de/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://example.com/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/</loc>
+    <lastmod>2018-07-13T17:14:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://example.com/es/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://example.com/de/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://example.com/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://example.com/ua-47268287-3/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://example.com/es/ua-47268287-3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://example.com/de/ua-47268287-3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://example.com/ua-47268287-3/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2018-07-13T17:14:07+08:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://example.com/es/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://example.com/de/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://example.com/"
+                />
+  </url>
+  
+</urlset>

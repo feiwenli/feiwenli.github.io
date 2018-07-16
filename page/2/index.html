@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.42.2" />
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="学习笔记" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://example.com/" />
+
+
+
+<meta property="og:updated_time" content="2018-07-13T17:14:07&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="学习笔记"/>
+<meta name="twitter:description" content=""/>
+
+
+
+    <link rel="canonical" href="https://example.com/">
+
+    <title>
+      
+        学习笔记
+      
+    </title>
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link href="https://example.com/css/style.css" rel="stylesheet">
+
+    
+    <link href="https://example.com/index.xml" rel="alternate" type="application/rss+xml" title="学习笔记" />
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      <header class="blog-header">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            学习笔记
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                
+                <li class="nav-item active">
+                    
+                        <a class="nav-link" href="/">Home</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/about/">About</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/contact/">Contact</a>
+                    
+                </li>
+                
+            </ul>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        
+                            <a class="dropdown-item" href="https://example.com/es/">Español</a>
+                        
+                            <a class="dropdown-item" href="https://example.com/de/">Deutsch</a>
+                        
+                            <a class="dropdown-item" href="https://example.com/">English</a>
+                        
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+</header>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8 blog-main">
+
+          
+
+
+
+
+    
+        <article class="blog-post">
+    <header>
+        <h2 class="blog-post-title">
+            <a class="text-dark" href="/2018/07/7-12-%E6%80%BB%E7%BB%93/">7-12 总结</a>
+        </h2>
+        
+
+
+<div class="blog-post-date text-secondary">
+    
+        Jul 13, 2018
+    
+    
+        by <span rel="author">Feiwen</span>
+    
+</div>
+
+        
+        
+    </header>
+    [TOC]
+git解决冲突 如果push的时候有冲突，则切换到develop分支上，pull一下，然后将有冲突的地方选择一段保留，然后重新上传。
+dockor machine 基本概念  镜像（Image） 是一个特殊的文件系统，包含完整的root文件系统，不包含任何动态数据，其内容在构建之后也不会改变。
+ 分层存储 镜像构建时，会一层层构建，前一层是后一层的基础。每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层。  容器 （Container） 镜像是静态定义，容器是镜像运行时的实体。容器的实质是进程，容器进程运行于属于自己的独立的命名空间，拥有自己的root文件系统、自己的网络配置、自己的进程空间和自己的用户ID空间。
+ 分层存储 每一个容器运行时，以镜像为基础层，在其上创建一个当前容器的存储层，容器存储层的生存周期和容器一样，容器消亡时，容器存储层也随之消亡。所以容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 数据卷（Volume）、或者绑定宿主目录。数据卷的生存周期独立于容器。  仓库（Repository） 集中的存储、分发镜像的服务——Docker Registry 一个Docker Registry可以包含多个仓库；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。
+基本指令 ```shell docker-machine ls alias dm=docker-machine //取别名 dm ls
+  dm create test //创建虚拟机 dm env test //指定环境，复制最后一句完成切换 dm stop name //一个一个关，不要强制关机
+### Docker镜像 #### 使用Dockerfile定制镜像 ```shell Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ mkdir mynginx Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ cd mynginx/ Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ touch Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ vi Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ docker build -t nginx:v3 .
+    <p></p>
+    <a href="/2018/07/7-12-%E6%80%BB%E7%BB%93/">Read More →</a>
+</article>
+    
+
+
+
+    
+        <article class="blog-post">
+    <header>
+        <h2 class="blog-post-title">
+            <a class="text-dark" href="/about/">About</a>
+        </h2>
+        
+
+
+<div class="blog-post-date text-secondary">
+    
+        Jul 13, 2018
+    
+    
+        by <span rel="author">Feiwen</span>
+    
+</div>
+
+        
+        
+    </header>
+    Nice to meet you!
+    <p></p>
+    <a href="/about/">Read More →</a>
+</article>
+    
+
+
+
+
+
+<nav class="blog-pagination">
+    <ul class="pagination justify-content-center">
+        
+        <li class="page-item">
+            <a class="page-link" href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+        </li>
+        
+        <li class="page-item ">
+            <a class="page-link" href="/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+        </li>
+        
+        
+            
+            
+            
+            
+                
+                
+            
+            
+                <li class="page-item ">
+                    <a class="page-link" href="/">1</a>
+                </li>
+            
+        
+            
+            
+            
+            
+                
+                
+            
+            
+                <li class="page-item active">
+                    <a class="page-link" href="/page/2/">2</a>
+                </li>
+            
+        
+        <li class="page-item disabled">
+            <a class="page-link" href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        </li>
+        
+            <li class="page-item">
+                <a class="page-link" href="/page/2/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+            </li>
+        
+    </ul>
+</nav>
+
+
+
+
+        </div>
+
+        <aside class="col-12 col-lg-3 ml-auto blog-sidebar">
+    
+        
+
+
+<section>
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+        
+        <li>
+            <a href="/1/01/2018-07-15/">2018-07-15</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-13/">2018-07-13</a>
+        </li>
+        
+        <li>
+            <a href="/2018/07/7-11-%E6%80%BB%E7%BB%93/">7-11 总结</a>
+        </li>
+        
+        <li>
+            <a href="/2018/07/7-12-%E6%80%BB%E7%BB%93/">7-12 总结</a>
+        </li>
+        
+        <li>
+            <a href="/post/">Posts</a>
+        </li>
+        
+    </ol>
+</section>
+
+    
+    
+        <section>
+    
+        
+    
+        
+    
+        
+    
+</section>
+    
+</aside>
+
+      </div>
+    </div>
+    
+
+    
+      
+
+
+
+
+
+
+<footer class="blog-footer w-100">
+    <nav class="navbar navbar-light bg-light">
+        <p class="w-100 text-center">Hugo template made with ❤ by <a href="https://github.com/Xzya">Xzya</a>, inspired by <a href="https://github.com/alanorth/hugo-theme-bootstrap4-blog">hugo-theme-bootstrap4-blog</a></p>
+        <p class="w-100 text-center"><a href="#">Back to top</a></p>
+    </nav>
+</footer>
+
+    
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>

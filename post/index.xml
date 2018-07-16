@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 学习笔记</title>
+    <link>https://example.com/post/</link>
+    <description>Recent content in Posts on 学习笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Jul 2018 17:14:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018-07-15</title>
+      <link>https://example.com/1/01/2018-07-15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/1/01/2018-07-15/</guid>
+      <description>这一周的主要学习内容： - git - 如何配置本地仓库 - 如何与远程仓库建立链接 - 如何将本地文件push到远程仓库 - push遇到冲突的解决办法 - 从远程克隆文件到本地
+ docker
+ 了解镜像、容器和仓库 从服务器拉取镜像以及使用 Dockerfile的编写（基础）  java基础知识
+ static关键词 assert断言 泛型   下周重点自学内容： - java基础知识</description>
+    </item>
+    
+    <item>
+      <title>2018-07-13</title>
+      <link>https://example.com/1/01/2018-07-13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/1/01/2018-07-13/</guid>
+      <description>[TOC]
+总结  nginx和mysql镜像的安装、启动、停止； 学会使用hugo创建一个博客 上传文件到自己的Github  Docker常用命令 docker pull 镜像名:tag //拉取镜像 docker imges |grep nginx //查看名字中有nginx的镜像 docker run -d 镜像名 docker ps //看进程 docker-machine.exe env winpty docker exec -it 89e90b139046 //bin/bash //进入 ps -ef |grep nginx //查看 docker kill 89e90b139046 //在外面kill一个镜像 docker run -d -p 8080:80 -p 8081:80 地址 //映射，一个镜像指出了多个端口，少见，-d 在后台运行 docker push //上传 docker tag name newname //打tag/改名 docker ps -a //查看所有的容器，包括已经停止的 docker rm 容器名orID //删除单个容器 docker rmi 镜像名orID //删除单个镜像   使用docker images时，可能会出现REPOSITORY和TAG均为none的镜像，使用以下命令修改名字：  docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）  Dockerfile COPY &amp;lt;源路径&amp;gt; &amp;lt;目标路径&amp;gt; ADD &amp;lt;源路径&amp;gt; &amp;lt;目标路径&amp;gt; //，所有的文件复制均使用COPY指令，仅在需要自动解压缩的场合使用ADD  docker mysql docker run --name mysql -p 12345:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql //启动mysql // 将容器的12345端口映射到主机的3306端口 //--name 给容器命名  hugo hugo new site my-blog //初始化项目 hugo new XX.</description>
+    </item>
+    
+    <item>
+      <title>7-11 总结</title>
+      <link>https://example.com/2018/07/7-11-%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 13 Jul 2018 17:14:07 +0800</pubDate>
+      
+      <guid>https://example.com/2018/07/7-11-%E6%80%BB%E7%BB%93/</guid>
+      <description>[TOC]
+Git 基本配置 git config --global user.name &amp;quot;李斐文&amp;quot; git config --global user.email &amp;quot;feiwen.li@hand-china.com&amp;quot; git init git clone 网址  上传文件 git add filename git commit -m &amp;quot;注释&amp;quot; git push origin master  把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
+版本回退 git reset -hard commit_id //回退到版本号为commit_id 的版本 git log //查看提交历史，以便确定要回退到哪个版本 git reflog //查看命令历史，以便确定要回到未来的哪个版本。  HEAD指向的版本就是当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+丢弃工作区的修改 当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令
+git checkout -- file  当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步:
+git reset HEAD file git checkout -- file  查看修改 git status //查看文件是否被修改过 git diff //查看修改内容  分支  创建分支  git checkout -b 19892  -b 表示创建并切换 显示分支  git branch  切换分支  git checkout master  将dev分支的工作成果合并到master分支上：  git merge dev   vagrant 安装vagrant 创建目录如下：</description>
+    </item>
+    
+    <item>
+      <title>7-12 总结</title>
+      <link>https://example.com/2018/07/7-12-%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 13 Jul 2018 17:14:07 +0800</pubDate>
+      
+      <guid>https://example.com/2018/07/7-12-%E6%80%BB%E7%BB%93/</guid>
+      <description>[TOC]
+git解决冲突 如果push的时候有冲突，则切换到develop分支上，pull一下，然后将有冲突的地方选择一段保留，然后重新上传。
+dockor machine 基本概念  镜像（Image） 是一个特殊的文件系统，包含完整的root文件系统，不包含任何动态数据，其内容在构建之后也不会改变。
+ 分层存储 镜像构建时，会一层层构建，前一层是后一层的基础。每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层。  容器 （Container） 镜像是静态定义，容器是镜像运行时的实体。容器的实质是进程，容器进程运行于属于自己的独立的命名空间，拥有自己的root文件系统、自己的网络配置、自己的进程空间和自己的用户ID空间。
+ 分层存储 每一个容器运行时，以镜像为基础层，在其上创建一个当前容器的存储层，容器存储层的生存周期和容器一样，容器消亡时，容器存储层也随之消亡。所以容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 数据卷（Volume）、或者绑定宿主目录。数据卷的生存周期独立于容器。  仓库（Repository） 集中的存储、分发镜像的服务——Docker Registry 一个Docker Registry可以包含多个仓库；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。
+基本指令 ```shell docker-machine ls alias dm=docker-machine //取别名 dm ls
+  dm create test //创建虚拟机 dm env test //指定环境，复制最后一句完成切换 dm stop name //一个一个关，不要强制关机
+### Docker镜像 #### 使用Dockerfile定制镜像 ```shell Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ mkdir mynginx Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ cd mynginx/ Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ touch Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ vi Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ docker build -t nginx:v3 .</description>
+    </item>
+    
+  </channel>
+</rss>
