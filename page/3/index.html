@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+	<meta name="generator" content="Hugo 0.42.2" />
     <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="19892（李斐文）" />
+<meta property="og:title" content="学习笔记" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://example.com/post/" />
+<meta property="og:url" content="https://example.com/" />
 
 
 
@@ -24,16 +25,16 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="19892（李斐文）"/>
+<meta name="twitter:title" content="学习笔记"/>
 <meta name="twitter:description" content=""/>
 
 
 
-    <link rel="canonical" href="https://example.com/post/">
+    <link rel="canonical" href="https://example.com/">
 
     <title>
       
-        19892（李斐文） | 学习笔记
+        学习笔记
       
     </title>
 
@@ -43,7 +44,7 @@
     <link href="https://example.com/css/style.css" rel="stylesheet">
 
     
-    <link href="https://example.com/post/index.xml" rel="alternate" type="application/rss+xml" title="学习笔记" />
+    <link href="https://example.com/index.xml" rel="alternate" type="application/rss+xml" title="学习笔记" />
     
 
     
@@ -65,7 +66,7 @@
             <ul class="navbar-nav">
                 
                 
-                <li class="nav-item ">
+                <li class="nav-item active">
                     
                         <a class="nav-link" href="/">Home</a>
                     
@@ -121,7 +122,7 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/1/01/2018-07-23/">2018-07-23</a>
+            <a class="text-dark" href="/1/01/2018-07-17/">2018-07-17</a>
         </h2>
         
 
@@ -136,9 +137,11 @@
         
         
     </header>
-     今日学习 
+    一：变量与数据类型  基本数据类型  byte:1字节/short:2字节/int:4字节/long:8字节/float:4字节/double:8字节/char:1字节/bollean:1字节(作为数组中的某个元素),4字节(作为单个变量存储数据) 存放在栈空间，栈空间特点：1. 存储效率高 2. 先进后出 3. 存储空间小，不能存放大量的数据 java底层的byte和short按照32位（int类型）计算。  引用数据类型  String 存放在堆空间： 存取效率最低；存放的位置随机；存储空间大，能存放大容量的数据。  自定义数据类型  变量用来操作内存中的数据。 字面量：java的变量和常量中存放的具体的数据。
+unicode java底层使用一个16位的整数来处理字符类型，该数值是一个unicode编码值。
+for(int i=0;i&lt;=127;i++){ System.out.println((char)i+&quot;:&quot;+i); // 打印出0~127所对应的字符 }  基本数据类型的包装类 Integer.MIN_VALUE //int类型的最小值 Integer.MAX_VALUE int Integer.parseInt(String sInteger); // 将字符串的整数转换为int类型的数据 String Integer.toBinaryString(int value); // 将十进制数转换为二进制，返回结果为String String Integer.toHexString(int value); // 将十进制数转化为十六进制，返回结果为String类型  补码  在计算机系统中，采用二进制的补码来存储。 最高位是符号位，0表示正数，1表示负数。 正数的值是其本身，负数的值是最高为不变，其他位逐位取反，再加1。 两数相加，若高位有进位，则进位被舍弃。（减法也可以按加法来处理） 正数和负数的关系是取反加一。  转义符  \ 反斜杠 \t 间隔 (&rsquo;\u0009&rsquo;) \n 换行 (&rsquo;\u000A&rsquo;) \r 回车 (&rsquo;\u000D&rsquo;) \d 数字 等价于 [0-9] \D 非数字 等价于 [^0-9] \s 空白符号 [\t\n\x0B\f\r] \S 非空白符号 [^\t\n\x0B\f\r] \w 单独字符 [a-zA-Z_0-9] \W 非单独字符 [^a-zA-Z_0-9] \f 换页符 \e Escape \b 一个单词的边界 \B 一个非单词的边界 \G 前一个匹配的结束 \u4e2d 表示unicode编码对应的字符（汉字：中）  类型转换 小类型向大类型转换 由JVM自动完成 - 转换规则：符号为会自动扩展，负数补1，正数补0 byte-&gt;short-&gt;int-&gt;long-&gt;float-&gt;double int和char类型的数据在某些情况下可以自动相互转换 如果小类型的精度值高于大类型的精度值，则有可能出现精度丢失问题。
     <p></p>
-    <a href="/1/01/2018-07-23/">Read More →</a>
+    <a href="/1/01/2018-07-17/">Read More →</a>
 </article>
     
 
@@ -148,7 +151,7 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/1/01/2018-07-22/">2018-07-22</a>
+            <a class="text-dark" href="/1/01/2018-07-16/">2018-07-16</a>
         </h2>
         
 
@@ -163,9 +166,14 @@
         
         
     </header>
-    本周学习内容  java语言基础、面向对象、集合类、本地文件操作、IO操作、多线程、网络通信和JDBC Maven的配置与使用 Docker中的MySQL、Navicat和IDEA的连接与使用  JDBC 编写流程  加载驱动 打开连接 执行查询 处理结果 清理环境  mysql 增删改查的模板 &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.11&lt;/version&gt; &lt;/dependency&gt;  public class JDBCDemo { public static void main(String [] args){ String sql = &quot;SELECT * FROM tbl_user&quot;; Connection conn = null; Statement st = null; ResultSet rs = null; try{ conn = DriverManager.getConnection(&quot;jdbc:mysql://192.168.99.100:3306/aaoo&quot;,&quot;root&quot;,&quot;1234567&quot;); st = conn.createStatement(); rs = st.executeQuery(sql); while(rs.next()){ System.out.print(rs.getInt(&quot;id&quot;)+&quot; &quot;); System.out.print(rs.getString(&quot;name&quot;)+&quot; &quot;); System.out.print(rs.getString(&quot;password&quot;)+&quot; &quot;); System.
+     Maven功能 就是通过pom.xml文件的配置获取jar包，而不用手动去添加jar包。 setting.xml主要用于配置maven的运行环境等一系列通用的属性，是全局级别的配置文件；而pom.xml主要描述了项目的maven坐标，依赖关系，开发者需要遵循的规则，缺陷管理系统，组织和licenses，以及其他所有的项目相关因素，是项目级别的配置文件。
+Maven配置本地库 在setting.xml中设置：
+&lt;localRepository&gt;D:\software\maven\repository&lt;/localRepository&gt;  GroupId 配置：
+&lt;plugin&gt; &lt;groupId&gt;com.test.mytest&lt;/groupId&gt; &lt;artifactId&gt;mytest&lt;/artifactId&gt; &lt;configuration&gt; &lt;tomcatLocation&gt;${tomcatPath}&lt;/tomcatLocation&gt; &lt;/configuration&gt; &lt;/plugin&gt; &lt;/profiles&gt;  命令行完成配置：
+mvn archetype:generate -DgroupId=com.test.mytest -DartifactId=NumberGenerator -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false  docker之:镜像 使用docker build -t name . 命令来构建一个新的image。这种情况下，如果我们使用了和之前一样的镜像名来命名，那么docker会把这个名字赋给新的镜像，以前的镜像并不会被删除，但是此时它的名字被新的镜像剥夺了，就成为了一个无名镜像，也就是:出现的原因。 这个none镜像会占用磁盘空间，所以我们必须删除它,需要删除引它的容器:
+docker rm $(docker images -f &quot;dangling=true&quot; -q)   rm是删除容器的命令,rmi是删除镜像的命令 然后再删除镜像：  docker rmi $(docker ps -aq)  
     <p></p>
-    <a href="/1/01/2018-07-22/">Read More →</a>
+    <a href="/1/01/2018-07-16/">Read More →</a>
 </article>
     
 
@@ -175,7 +183,7 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/1/01/2018-07-21/">2018-07-21</a>
+            <a class="text-dark" href="/1/01/2018-07-15/">2018-07-15</a>
         </h2>
         
 
@@ -190,10 +198,15 @@
         
         
     </header>
-    考试题1  针对pdf打不开的问题进行改正：
-public class App { public static void main( String[] args ) { try { // 实际不确定文件类型的时候，需要用字节流进行传递，之后会原样输出，否则会有错误 URL url = new URL(&quot;http://192.168.11.205:18080/trainning/SampleChapter1.pdf&quot;); URLConnection connection = url.openConnection(); InputStream is = connection.getInputStream(); byte [] getData = readInputStream(is); File f1 = new File(&quot;Exam1/tmp&quot;); if(!f1.exists()) { f1.mkdir(); } File file = new File(&quot;Exam1/tmp/SampleChapter1.pdf&quot;); FileOutputStream fos = new FileOutputStream(file); fos.write(getData); if (fos!=null){ fos.close(); } if (is != null){ is.close(); } } catch (MalformedURLException e) { e.
+    这一周的主要学习内容：
+ git
+ 如何配置本地仓库 如何与远程仓库建立链接 如何将本地文件push到远程仓库 push遇到冲突的解决办法 从远程克隆文件到本地  docker
+ 了解镜像、容器和仓库 从服务器拉取镜像以及使用 Dockerfile的编写（基础）  java基础知识
+ static关键词 assert断言 泛型   本周作业： 博客网址：http://feiwenli.github.io github:https://github.com/feiwenli/myblog
+下周重点自学内容：
+ java基础知识  
     <p></p>
-    <a href="/1/01/2018-07-21/">Read More →</a>
+    <a href="/1/01/2018-07-15/">Read More →</a>
 </article>
     
 
@@ -205,13 +218,39 @@ public class App { public static void main( String[] args ) { try { // 实际不
     <ul class="pagination justify-content-center">
         
         <li class="page-item">
-            <a class="page-link" href="/post/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+            <a class="page-link" href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
         </li>
         
-        <li class="page-item disabled">
-            <a class="page-link" href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+        <li class="page-item ">
+            <a class="page-link" href="/page/2/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
         </li>
         
+        
+            
+            
+            
+            
+                
+                
+            
+            
+                <li class="page-item ">
+                    <a class="page-link" href="/">1</a>
+                </li>
+            
+        
+            
+            
+            
+            
+                
+                
+            
+            
+                <li class="page-item ">
+                    <a class="page-link" href="/page/2/">2</a>
+                </li>
+            
         
             
             
@@ -222,7 +261,7 @@ public class App { public static void main( String[] args ) { try { // 实际不
             
             
                 <li class="page-item active">
-                    <a class="page-link" href="/post/">1</a>
+                    <a class="page-link" href="/page/3/">3</a>
                 </li>
             
         
@@ -235,7 +274,7 @@ public class App { public static void main( String[] args ) { try { // 实际不
             
             
                 <li class="page-item ">
-                    <a class="page-link" href="/post/page/2/">2</a>
+                    <a class="page-link" href="/page/4/">4</a>
                 </li>
             
         
@@ -248,29 +287,16 @@ public class App { public static void main( String[] args ) { try { // 实际不
             
             
                 <li class="page-item ">
-                    <a class="page-link" href="/post/page/3/">3</a>
-                </li>
-            
-        
-            
-            
-            
-            
-                
-                
-            
-            
-                <li class="page-item ">
-                    <a class="page-link" href="/post/page/4/">4</a>
+                    <a class="page-link" href="/page/5/">5</a>
                 </li>
             
         
         <li class="page-item ">
-            <a class="page-link" href="/post/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+            <a class="page-link" href="/page/4/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>
         
             <li class="page-item">
-                <a class="page-link" href="/post/page/4/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+                <a class="page-link" href="/page/5/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
             </li>
         
     </ul>

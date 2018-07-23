@@ -122,7 +122,7 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/1/01/2018-07-20/">2018-07-20</a>
+            <a class="text-dark" href="/1/01/2018-07-13/">2018-07-13</a>
         </h2>
         
 
@@ -137,11 +137,9 @@
         
         
     </header>
-    今日学习  IO操作 java&amp;XML Socket  二：IO操作 流  基本功能：读和写 字节流：以“Stream”结尾；可以处理所有类型的数据，在读取时，读到一个字节就返回一个字节。 字符流：以“Reader”或“Writer”结尾；仅能处理纯文本数据，在读取时，速到一个或多个字节，先查找指定的编码表，然后将查到的字符返回。  |/ | 字节流 | 字符流 | |&ndash;|&ndash;|&ndash;| | 输入流 | InputStream | Reader | | 输出流 | OutputStream | Writer |
-字节流（Stream）  DataInputStream 和 DataOutputStream 可以以二进制格式读写所有的基本 Java 类型。 FileInputStream 和 FileOutputStream 可以提供附着在一个磁盘文件上的输入流和输出流，而你只需向其构造器提供文件名或文件的完整路径名。 BufferedInputStream(InputStream in)
-创建一个带缓冲区的流。带缓冲区的输入流在从流中读入字符时，不会每次都对设备访问。当缓冲区为空时，会向缓冲区中读入一个新的数据块。 BufferedOutputStream(OutputStream out) 创建一个带缓冲区的流。带缓冲区的输出流在收集要写出的字符时，不会每次都对设备访问。当缓冲区填满或当流被冲刷(flush)时，数据就被写出。 流在默认情况下是不被缓冲区缓存的，如果想使用缓冲机制，以及用于文件的数据输入方法，那么必须要用到以下构造器序列：  DataInputStream din = new DateInputStream( new BufferedInputStream( new FileInputStream(&quot;filename.txt&quot;)));  把 DataInputStream 置于构造器链的最后，这是因为我们希望使用DataInputStream 的方法，并且希望它们能够使用带缓冲机制的 read 方法。 - PushbackInputStream(InputStream in)
+    总结  nginx和mysql镜像的安装、启动、停止； 学会使用hugo创建一个博客 上传文件到自己的Github  Docker常用命令 docker pull 镜像名:tag //拉取镜像 docker imges |grep nginx //查看名字中有nginx的镜像 docker run -d 镜像名 docker ps //看进程 docker-machine.exe env winpty docker exec -it 89e90b139046 //bin/bash //进入 ps -ef |grep nginx //查看 docker kill 89e90b139046 //在外面kill一个镜像 docker run -d -p 8080:80 -p 8081:80 地址 //映射，一个镜像指出了多个端口，少见，-d 在后台运行 docker push //上传 docker tag name newname //打tag/改名 docker ps -a //查看所有的容器，包括已经停止的 docker rm 容器名orID //删除单个容器 docker rmi 镜像名orID //删除单个镜像   使用docker images时，可能会出现REPOSITORY和TAG均为none的镜像，使用以下命令修改名字：  docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）  Dockerfile COPY &lt;源路径&gt; &lt;目标路径&gt; ADD &lt;源路径&gt; &lt;目标路径&gt; //，所有的文件复制均使用COPY指令，仅在需要自动解压缩的场合使用ADD  docker mysql docker run --name mysql -p 12345:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql //启动mysql // 将容器的12345端口映射到主机的3306端口 //--name 给容器命名  hugo hugo new site my-blog //初始化项目 hugo new XX.
     <p></p>
-    <a href="/1/01/2018-07-20/">Read More →</a>
+    <a href="/1/01/2018-07-13/">Read More →</a>
 </article>
     
 
@@ -151,7 +149,7 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/1/01/2018-07-19/">2018-07-19</a>
+            <a class="text-dark" href="/1/01/2018-07-12/">2018-07-12</a>
         </h2>
         
 
@@ -166,9 +164,13 @@
         
         
     </header>
-    今日学习  java集合/本地文件操作/IO操作/多线程 单例模式  一：集合类 Collection接口  可以理解为一个动态的对象数组，不同的时集合中的对象内容可以任意扩充 特点  性能高 容易扩展和修改  Collection的常用子类  List：可以存放任意数据，可重复（在迭代输出时，不能对集合的元素进行删除操作）  ArrayList：非线程安全，异步处理，性能高 Vector：线程安全，同步处理，性能低  Set：不能重复，可以排序  HashSet TreeSet：有序排放  Queue：先进先出   List&lt;String&gt; lists = null; lists = new ArrayList&lt;&gt;(); lists.add(&quot;A&quot;); lists.add(&quot;B&quot;); for(int i=0; i&lt;lists.size();i++){ System.out.println(lists.get(i)); } lists.remove(0); // 查询是否存在 System.out.println(&quot;indexOf &quot;+lists.indexOf(&quot;K&quot;)); // 是否为空 System.out.println(&quot;isEmpty &quot;+lists.isEmpty());  Iterator接口（迭代器）  集合输出的标准操作 专门的迭代输出接口，将元素一个个进行判断，判断其是否有内容，如果有内容，就取出 只能单向移动 元素被访问的顺序取决于集合的类型 调用next时，迭代器就越过下一个元素，并返回刚刚越过的那个元素的引用  List&lt;String&gt; list = new ArrayList&lt;&gt;(); list.add(&quot;D&quot;); list.add(&quot;K&quot;); list.
+    git解决冲突 如果push的时候有冲突，则切换到develop分支上，pull一下，然后将有冲突的地方选择一段保留，然后重新上传。
+dockor machine 基本概念  镜像（Image） 是一个特殊的文件系统，包含完整的root文件系统，不包含任何动态数据，其内容在构建之后也不会改变。
+ 分层存储 镜像构建时，会一层层构建，前一层是后一层的基础。每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层。  容器 （Container） 镜像是静态定义，容器是镜像运行时的实体。容器的实质是进程，容器进程运行于属于自己的独立的命名空间，拥有自己的root文件系统、自己的网络配置、自己的进程空间和自己的用户ID空间。
+ 分层存储 每一个容器运行时，以镜像为基础层，在其上创建一个当前容器的存储层，容器存储层的生存周期和容器一样，容器消亡时，容器存储层也随之消亡。所以容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 数据卷（Volume）、或者绑定宿主目录。数据卷的生存周期独立于容器。  仓库（Repository） 集中的存储、分发镜像的服务——Docker Registry 一个Docker Registry可以包含多个仓库；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。
+基本指令  docker-machine ls alias dm=docker-machine //取别名 dm ls dm create test //创建虚拟机 dm env test //指定环境，复制最后一句完成切换 dm stop name //一个一个关，不要强制关机  Docker镜像 使用Dockerfile定制镜像 Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ mkdir mynginx Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ cd mynginx/ Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ touch Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ vi Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ docker build -t nginx:v3 .
     <p></p>
-    <a href="/1/01/2018-07-19/">Read More →</a>
+    <a href="/1/01/2018-07-12/">Read More →</a>
 </article>
     
 
@@ -178,7 +180,7 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/1/01/2018-07-18/">2018-07-18</a>
+            <a class="text-dark" href="/1/01/2018-07-11/">2018-07-11</a>
         </h2>
         
 
@@ -193,13 +195,13 @@
         
         
     </header>
-    maven maven 报错 Unknown lifecycle phase &ldquo;–version&rdquo;. You must specify a valid lifecycle pid&gt;:[:]:. Available lifecycle phases a-resources, process-resources, compile, process-classes, generate-test-sources, , test-compile, process-test-classes, test, prepare-package, package, pre-integr deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy.
- 解决办法：   第一步：mvn install 第二步：mvn compiler:compile 第三步：mvn org.apache.maven.plugins:maven-compiler-plugin:compile 第四步：mvn org.apache.maven.plugins:maven-compiler-plugin:2.0.2:compile
- 建立项目 file-&gt;new-&gt;project-&gt;Maven-&gt;Create from archetype-&gt;org.apache.maven.archetypes:maven-archetype-quickstart
- 父子项目：  在父项目中新建一个maven项目，并将父项目中的src文件删除。
- pom.xml 文件配置如下，即可以生成可执行jar包。  &lt;build&gt; &lt;sourceDirectory&gt;src/main/java&lt;/sourceDirectory&gt; &lt;finalName&gt;test4&lt;/finalName&gt;&lt;!--你的jar文件的名字--&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;appendAssemblyId&gt;false&lt;/appendAssemblyId&gt; &lt;descriptorRefs&gt; &lt;descriptorRef&gt;jar-with-dependencies&lt;/descriptorRef&gt; &lt;/descriptorRefs&gt; &lt;archive&gt; &lt;manifest&gt; &lt;mainClass&gt;com.
+    Git 基本配置 git config --global user.name &quot;李斐文&quot; git config --global user.email &quot;feiwen.li@hand-china.com&quot; git init git clone 网址  上传文件 git add filename git commit -m &quot;注释&quot; git push origin master  把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
+版本回退 git reset -hard commit_id //回退到版本号为commit_id 的版本 git log //查看提交历史，以便确定要回退到哪个版本 git reflog //查看命令历史，以便确定要回到未来的哪个版本。  HEAD指向的版本就是当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+丢弃工作区的修改 当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令
+git checkout -- file  当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步:
+git reset HEAD file git checkout -- file  查看修改 git status //查看文件是否被修改过 git diff //查看修改内容  分支  创建分支  git checkout -b 19892  -b 表示创建并切换 显示分支  git branch  切换分支  git checkout master  将dev分支的工作成果合并到master分支上：  git merge dev   vagrant 安装vagrant 创建目录如下：
     <p></p>
-    <a href="/1/01/2018-07-18/">Read More →</a>
+    <a href="/1/01/2018-07-11/">Read More →</a>
 </article>
     
 
@@ -215,7 +217,7 @@
         </li>
         
         <li class="page-item ">
-            <a class="page-link" href="/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+            <a class="page-link" href="/page/3/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
         </li>
         
         
@@ -240,7 +242,7 @@
                 
             
             
-                <li class="page-item active">
+                <li class="page-item ">
                     <a class="page-link" href="/page/2/">2</a>
                 </li>
             
@@ -266,8 +268,8 @@
                 
             
             
-                <li class="page-item disabled">
-                    <span class="page-link" aria-hidden="true">&hellip;</span>
+                <li class="page-item active">
+                    <a class="page-link" href="/page/4/">4</a>
                 </li>
             
         
@@ -285,7 +287,7 @@
             
         
         <li class="page-item ">
-            <a class="page-link" href="/page/3/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+            <a class="page-link" href="/page/5/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>
         
             <li class="page-item">

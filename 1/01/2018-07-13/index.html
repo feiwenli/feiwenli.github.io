@@ -6,8 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="2018-07-13" />
-<meta property="og:description" content="[TOC]
-总结  nginx和mysql镜像的安装、启动、停止； 学会使用hugo创建一个博客 上传文件到自己的Github  Docker常用命令 docker pull 镜像名:tag //拉取镜像 docker imges |grep nginx //查看名字中有nginx的镜像 docker run -d 镜像名 docker ps //看进程 docker-machine.exe env winpty docker exec -it 89e90b139046 //bin/bash //进入 ps -ef |grep nginx //查看 docker kill 89e90b139046 //在外面kill一个镜像 docker run -d -p 8080:80 -p 8081:80 地址 //映射，一个镜像指出了多个端口，少见，-d 在后台运行 docker push //上传 docker tag name newname //打tag/改名 docker ps -a //查看所有的容器，包括已经停止的 docker rm 容器名orID //删除单个容器 docker rmi 镜像名orID //删除单个镜像   使用docker images时，可能会出现REPOSITORY和TAG均为none的镜像，使用以下命令修改名字：  docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）  Dockerfile COPY &lt;源路径&gt; &lt;目标路径&gt; ADD &lt;源路径&gt; &lt;目标路径&gt; //，所有的文件复制均使用COPY指令，仅在需要自动解压缩的场合使用ADD  docker mysql docker run --name mysql -p 12345:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql //启动mysql // 将容器的12345端口映射到主机的3306端口 //--name 给容器命名  hugo hugo new site my-blog //初始化项目 hugo new XX." />
+<meta property="og:description" content="总结  nginx和mysql镜像的安装、启动、停止； 学会使用hugo创建一个博客 上传文件到自己的Github  Docker常用命令 docker pull 镜像名:tag //拉取镜像 docker imges |grep nginx //查看名字中有nginx的镜像 docker run -d 镜像名 docker ps //看进程 docker-machine.exe env winpty docker exec -it 89e90b139046 //bin/bash //进入 ps -ef |grep nginx //查看 docker kill 89e90b139046 //在外面kill一个镜像 docker run -d -p 8080:80 -p 8081:80 地址 //映射，一个镜像指出了多个端口，少见，-d 在后台运行 docker push //上传 docker tag name newname //打tag/改名 docker ps -a //查看所有的容器，包括已经停止的 docker rm 容器名orID //删除单个容器 docker rmi 镜像名orID //删除单个镜像   使用docker images时，可能会出现REPOSITORY和TAG均为none的镜像，使用以下命令修改名字：  docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）  Dockerfile COPY &lt;源路径&gt; &lt;目标路径&gt; ADD &lt;源路径&gt; &lt;目标路径&gt; //，所有的文件复制均使用COPY指令，仅在需要自动解压缩的场合使用ADD  docker mysql docker run --name mysql -p 12345:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql //启动mysql // 将容器的12345端口映射到主机的3306端口 //--name 给容器命名  hugo hugo new site my-blog //初始化项目 hugo new XX." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://example.com/1/01/2018-07-13/" />
 
@@ -28,8 +27,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="2018-07-13"/>
-<meta name="twitter:description" content="[TOC]
-总结  nginx和mysql镜像的安装、启动、停止； 学会使用hugo创建一个博客 上传文件到自己的Github  Docker常用命令 docker pull 镜像名:tag //拉取镜像 docker imges |grep nginx //查看名字中有nginx的镜像 docker run -d 镜像名 docker ps //看进程 docker-machine.exe env winpty docker exec -it 89e90b139046 //bin/bash //进入 ps -ef |grep nginx //查看 docker kill 89e90b139046 //在外面kill一个镜像 docker run -d -p 8080:80 -p 8081:80 地址 //映射，一个镜像指出了多个端口，少见，-d 在后台运行 docker push //上传 docker tag name newname //打tag/改名 docker ps -a //查看所有的容器，包括已经停止的 docker rm 容器名orID //删除单个容器 docker rmi 镜像名orID //删除单个镜像   使用docker images时，可能会出现REPOSITORY和TAG均为none的镜像，使用以下命令修改名字：  docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）  Dockerfile COPY &lt;源路径&gt; &lt;目标路径&gt; ADD &lt;源路径&gt; &lt;目标路径&gt; //，所有的文件复制均使用COPY指令，仅在需要自动解压缩的场合使用ADD  docker mysql docker run --name mysql -p 12345:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql //启动mysql // 将容器的12345端口映射到主机的3306端口 //--name 给容器命名  hugo hugo new site my-blog //初始化项目 hugo new XX."/>
+<meta name="twitter:description" content="总结  nginx和mysql镜像的安装、启动、停止； 学会使用hugo创建一个博客 上传文件到自己的Github  Docker常用命令 docker pull 镜像名:tag //拉取镜像 docker imges |grep nginx //查看名字中有nginx的镜像 docker run -d 镜像名 docker ps //看进程 docker-machine.exe env winpty docker exec -it 89e90b139046 //bin/bash //进入 ps -ef |grep nginx //查看 docker kill 89e90b139046 //在外面kill一个镜像 docker run -d -p 8080:80 -p 8081:80 地址 //映射，一个镜像指出了多个端口，少见，-d 在后台运行 docker push //上传 docker tag name newname //打tag/改名 docker ps -a //查看所有的容器，包括已经停止的 docker rm 容器名orID //删除单个容器 docker rmi 镜像名orID //删除单个镜像   使用docker images时，可能会出现REPOSITORY和TAG均为none的镜像，使用以下命令修改名字：  docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）  Dockerfile COPY &lt;源路径&gt; &lt;目标路径&gt; ADD &lt;源路径&gt; &lt;目标路径&gt; //，所有的文件复制均使用COPY指令，仅在需要自动解压缩的场合使用ADD  docker mysql docker run --name mysql -p 12345:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql //启动mysql // 将容器的12345端口映射到主机的3306端口 //--name 给容器命名  hugo hugo new site my-blog //初始化项目 hugo new XX."/>
 
 
 
@@ -94,11 +92,11 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         
+                            <a class="dropdown-item" href="https://example.com/">English</a>
+                        
                             <a class="dropdown-item" href="https://example.com/es/">Español</a>
                         
                             <a class="dropdown-item" href="https://example.com/de/">Deutsch</a>
-                        
-                            <a class="dropdown-item" href="https://example.com/">English</a>
                         
                     </div>
                 </li>
@@ -136,8 +134,6 @@
 </header>
 <article class="blog-post">
     
-
-<p>[TOC]</p>
 
 <h3 id="总结">总结</h3>
 
@@ -226,23 +222,23 @@ git remote add origin https://github.com/feiwenli/blog  // 将本地仓库关联
     <ol class="list-unstyled">
         
         <li>
-            <a href="/1/01/2018-07-15/">2018-07-15</a>
+            <a href="/post/">19892（李斐文）</a>
         </li>
         
         <li>
-            <a href="/1/01/2018-07-13/">2018-07-13</a>
+            <a href="/1/01/2018-07-23/">2018-07-23</a>
         </li>
         
         <li>
-            <a href="/2018/07/7-11-%E6%80%BB%E7%BB%93/">7-11 总结</a>
+            <a href="/1/01/2018-07-22/">2018-07-22</a>
         </li>
         
         <li>
-            <a href="/2018/07/7-12-%E6%80%BB%E7%BB%93/">7-12 总结</a>
+            <a href="/1/01/2018-07-21/">2018-07-21</a>
         </li>
         
         <li>
-            <a href="/post/">Posts</a>
+            <a href="/1/01/2018-07-20/">2018-07-20</a>
         </li>
         
     </ol>

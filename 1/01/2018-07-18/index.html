@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="2018-07-18" />
+<meta property="og:description" content="maven maven 报错 Unknown lifecycle phase &ldquo;–version&rdquo;. You must specify a valid lifecycle pid&gt;:[:]:. Available lifecycle phases a-resources, process-resources, compile, process-classes, generate-test-sources, , test-compile, process-test-classes, test, prepare-package, package, pre-integr deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy.
+ 解决办法：   第一步：mvn install 第二步：mvn compiler:compile 第三步：mvn org.apache.maven.plugins:maven-compiler-plugin:compile 第四步：mvn org.apache.maven.plugins:maven-compiler-plugin:2.0.2:compile
+ 建立项目 file-&gt;new-&gt;project-&gt;Maven-&gt;Create from archetype-&gt;org.apache.maven.archetypes:maven-archetype-quickstart
+ 父子项目：  在父项目中新建一个maven项目，并将父项目中的src文件删除。
+ pom.xml 文件配置如下，即可以生成可执行jar包。  &lt;build&gt; &lt;sourceDirectory&gt;src/main/java&lt;/sourceDirectory&gt; &lt;finalName&gt;test4&lt;/finalName&gt;&lt;!--你的jar文件的名字--&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;appendAssemblyId&gt;false&lt;/appendAssemblyId&gt; &lt;descriptorRefs&gt; &lt;descriptorRef&gt;jar-with-dependencies&lt;/descriptorRef&gt; &lt;/descriptorRefs&gt; &lt;archive&gt; &lt;manifest&gt; &lt;mainClass&gt;com." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/1/01/2018-07-18/" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2018-07-18"/>
+<meta name="twitter:description" content="maven maven 报错 Unknown lifecycle phase &ldquo;–version&rdquo;. You must specify a valid lifecycle pid&gt;:[:]:. Available lifecycle phases a-resources, process-resources, compile, process-classes, generate-test-sources, , test-compile, process-test-classes, test, prepare-package, package, pre-integr deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy.
+ 解决办法：   第一步：mvn install 第二步：mvn compiler:compile 第三步：mvn org.apache.maven.plugins:maven-compiler-plugin:compile 第四步：mvn org.apache.maven.plugins:maven-compiler-plugin:2.0.2:compile
+ 建立项目 file-&gt;new-&gt;project-&gt;Maven-&gt;Create from archetype-&gt;org.apache.maven.archetypes:maven-archetype-quickstart
+ 父子项目：  在父项目中新建一个maven项目，并将父项目中的src文件删除。
+ pom.xml 文件配置如下，即可以生成可执行jar包。  &lt;build&gt; &lt;sourceDirectory&gt;src/main/java&lt;/sourceDirectory&gt; &lt;finalName&gt;test4&lt;/finalName&gt;&lt;!--你的jar文件的名字--&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;appendAssemblyId&gt;false&lt;/appendAssemblyId&gt; &lt;descriptorRefs&gt; &lt;descriptorRef&gt;jar-with-dependencies&lt;/descriptorRef&gt; &lt;/descriptorRefs&gt; &lt;archive&gt; &lt;manifest&gt; &lt;mainClass&gt;com."/>
+
+
+
+    <link rel="canonical" href="https://example.com/1/01/2018-07-18/">
+
+    <title>
+      
+        2018-07-18 | 学习笔记
+      
+    </title>
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link href="https://example.com/css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      <header class="blog-header">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            学习笔记
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/">Home</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/about/">About</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/contact/">Contact</a>
+                    
+                </li>
+                
+            </ul>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        
+                            <a class="dropdown-item" href="https://example.com/">English</a>
+                        
+                            <a class="dropdown-item" href="https://example.com/es/">Español</a>
+                        
+                            <a class="dropdown-item" href="https://example.com/de/">Deutsch</a>
+                        
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+</header>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8 blog-main">
+
+          
+
+<header>
+    <h2 class="blog-post-title">
+        <a class="text-dark" href="/1/01/2018-07-18/">2018-07-18</a>
+    </h2>
+    
+
+
+<div class="blog-post-date text-secondary">
+    
+    
+        by <span rel="author">Feiwen</span>
+    
+</div>
+
+    
+    
+    <hr>
+</header>
+<article class="blog-post">
+    
+
+<h2 id="maven">maven</h2>
+
+<h3 id="maven-报错">maven 报错</h3>
+
+<p>Unknown lifecycle phase &ldquo;–version&rdquo;. You must specify a valid lifecycle pid&gt;:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases a-resources, process-resources, compile, process-classes, generate-test-sources, , test-compile, process-test-classes, test, prepare-package, package, pre-integr deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy.</p>
+
+<ul>
+<li>解决办法：</li>
+</ul>
+
+<blockquote>
+<p>第一步：mvn install
+第二步：mvn compiler:compile
+第三步：mvn org.apache.maven.plugins:maven-compiler-plugin:compile
+第四步：mvn org.apache.maven.plugins:maven-compiler-plugin:2.0.2:compile</p>
+</blockquote>
+
+<h3 id="建立项目">建立项目</h3>
+
+<p>file-&gt;new-&gt;project-&gt;Maven-&gt;Create from archetype-&gt;org.apache.maven.archetypes:maven-archetype-quickstart</p>
+
+<ul>
+<li>父子项目：</li>
+</ul>
+
+<p>在父项目中新建一个maven项目，并将父项目中的src文件删除。</p>
+
+<ul>
+<li>pom.xml 文件配置如下，即可以生成可执行jar包。</li>
+</ul>
+
+<pre><code class="language-xml">&lt;build&gt;
+  &lt;sourceDirectory&gt;src/main/java&lt;/sourceDirectory&gt;
+  &lt;finalName&gt;test4&lt;/finalName&gt;&lt;!--你的jar文件的名字--&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt;
+      &lt;configuration&gt;
+        &lt;appendAssemblyId&gt;false&lt;/appendAssemblyId&gt;
+        &lt;descriptorRefs&gt;
+          &lt;descriptorRef&gt;jar-with-dependencies&lt;/descriptorRef&gt;
+        &lt;/descriptorRefs&gt;
+        &lt;archive&gt;
+          &lt;manifest&gt;
+            &lt;mainClass&gt;com.hand.App&lt;/mainClass&gt;&lt;!--你的程序的入口文件名，含有main文件的java文件--&gt;
+          &lt;/manifest&gt;
+        &lt;/archive&gt;
+      &lt;/configuration&gt;
+      &lt;executions&gt;
+        &lt;execution&gt;
+          &lt;id&gt;make-assembly&lt;/id&gt;
+          &lt;phase&gt;package&lt;/phase&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;assembly&lt;/goal&gt;
+          &lt;/goals&gt;
+        &lt;/execution&gt;
+      &lt;/executions&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+
+<ul>
+<li>build.sh文件，实现打包，运行的功能：</li>
+</ul>
+
+<pre><code class="language-sh">cd sub1
+mvn install
+java -jar target/sub1.jar
+cd ..
+cd sub2
+mvn install
+...
+</code></pre>
+
+<h3 id="package-install-deploy的联系与区别">package、install、deploy的联系与区别</h3>
+
+<ul>
+<li>package命令完成了项目编译、单元测试、打包功能，但没有把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库和远程maven私服仓库</li>
+<li>install命令完成了项目编译、单元测试、打包功能，同时把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库，但没有布署到远程maven私服仓库</li>
+<li>deploy命令完成了项目编译、单元测试、打包功能，同时把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库和远程maven私服仓库　　</li>
+</ul>
+
+<h2 id="java">java</h2>
+
+<h3 id="方法参数的使用情况">方法参数的使用情况</h3>
+
+<ul>
+<li>一个方法不能修改一个基本数据类型的参数（即布尔型或数值型）。</li>
+<li>一个方法可以改变一个对象参数的状态。</li>
+<li>一个方法不能让对象参数引用一个新的对象。</li>
+</ul>
+
+<h3 id="静态导入">静态导入</h3>
+
+<pre><code class="language-java">import static java.lang.System.out；
+println(&quot;hello world&quot;);
+</code></pre>
+
+<h3 id="阻止继承-final类和方法">阻止继承:final类和方法</h3>
+
+<ul>
+<li>类中的特定方法被声明为final后，子类就不能覆盖这个方法。final类中所有的方法自动成为final方法，但不包括域。对于final域来说，构造对象之后就不允许改变它们的值了。</li>
+<li>String类也是final类。</li>
+</ul>
+
+<h3 id="强制类型转换">强制类型转换</h3>
+
+<p>将一个子类的引用赋给一个超类的变量，编译器是允许的。
+将一个超类的引用赋给一个子类的变量，必须进行类型转换。
+用instanceof 判断能否成功转换：</p>
+
+<pre><code class="language-java">if (a instanceof b){   ... ...    }
+</code></pre>
+
+<h3 id="抽象类">抽象类</h3>
+
+<ul>
+<li>抽象类不能被实例化。</li>
+<li>类即使不含抽象方法，也可以将类声明为抽象类。</li>
+<li>可以定义一个抽象类的对象变量，但它只能引用非抽象子类的对象。</li>
+</ul>
+
+<h3 id="equals判断两个对象是否相等">equals判断两个对象是否相等</h3>
+
+<pre><code class="language-java">class Employee extends Person{
+    private double salary;
+    private LocalDate hireDay;
+    ...
+    public boolean equals(Object otherObject){
+        // java 核心技术 卷1 P68-169
+        // 检测是否引用同一个对象
+        if (this == otherObject) return true;
+        if (otherObject == null) return false;
+        // 检测是否属于同一个类
+        // getClass 返回一个对象所属的类
+        if (getClass() != otherObject.getClass()) return false;
+        Employee other = (Employee) otherObject;
+        return name.equals(other.name) &amp;&amp; salary == other.salary &amp;&amp; hireDay.equals(other.hireDay);
+    }
+}
+class Manage extends Employee{
+    private double bonus;
+    ...
+    @Override
+    public boolean equals(Object otherObject) {
+        if (! super.equals(otherObject)) return false;
+        Manage other = (Manage)otherObject;
+        return bonus == other.bonus;
+    }
+}
+</code></pre>
+
+<h2 id="lambda-表达式">lambda 表达式</h2>
+
+<ul>
+<li>对于只有一个抽象方法的接口，需要这种接口对象时，就可以提供一个lanbda表达式——函数式接口。</li>
+<li>不能把lambda表达式赋给类型为Object的变量，Object不是一个函数式接口。</li>
+</ul>
+
+<h3 id="java-util-function">java.util.function</h3>
+
+<ul>
+<li>BiFunction<T,U,R>，描述了参数类型为T和U而且返回类型为R的函数。</li>
+</ul>
+
+<pre><code class="language-java">BiFunction&lt;String,String,Integer&gt; comp
+    = (first,second) -&gt; first.length() - second.length();
+</code></pre>
+
+
+    
+
+    
+
+
+</article>
+
+
+
+        </div>
+
+        <aside class="col-12 col-lg-3 ml-auto blog-sidebar">
+    
+        
+
+
+<section>
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+        
+        <li>
+            <a href="/post/">19892（李斐文）</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-23/">2018-07-23</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-22/">2018-07-22</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-21/">2018-07-21</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-20/">2018-07-20</a>
+        </li>
+        
+    </ol>
+</section>
+
+    
+    
+        <section>
+    
+        
+    
+        
+    
+        
+    
+</section>
+    
+</aside>
+
+      </div>
+    </div>
+    
+
+    
+      
+
+
+
+
+
+
+<footer class="blog-footer w-100">
+    <nav class="navbar navbar-light bg-light">
+        <p class="w-100 text-center">Hugo template made with ❤ by <a href="https://github.com/Xzya">Xzya</a>, inspired by <a href="https://github.com/alanorth/hugo-theme-bootstrap4-blog">hugo-theme-bootstrap4-blog</a></p>
+        <p class="w-100 text-center"><a href="#">Back to top</a></p>
+    </nav>
+</footer>
+
+    
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>

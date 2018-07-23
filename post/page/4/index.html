@@ -121,7 +121,7 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/1/01/2018-07-23/">2018-07-23</a>
+            <a class="text-dark" href="/1/01/2018-07-13/">2018-07-13</a>
         </h2>
         
 
@@ -136,9 +136,9 @@
         
         
     </header>
-     今日学习 
+    总结  nginx和mysql镜像的安装、启动、停止； 学会使用hugo创建一个博客 上传文件到自己的Github  Docker常用命令 docker pull 镜像名:tag //拉取镜像 docker imges |grep nginx //查看名字中有nginx的镜像 docker run -d 镜像名 docker ps //看进程 docker-machine.exe env winpty docker exec -it 89e90b139046 //bin/bash //进入 ps -ef |grep nginx //查看 docker kill 89e90b139046 //在外面kill一个镜像 docker run -d -p 8080:80 -p 8081:80 地址 //映射，一个镜像指出了多个端口，少见，-d 在后台运行 docker push //上传 docker tag name newname //打tag/改名 docker ps -a //查看所有的容器，包括已经停止的 docker rm 容器名orID //删除单个容器 docker rmi 镜像名orID //删除单个镜像   使用docker images时，可能会出现REPOSITORY和TAG均为none的镜像，使用以下命令修改名字：  docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）  Dockerfile COPY &lt;源路径&gt; &lt;目标路径&gt; ADD &lt;源路径&gt; &lt;目标路径&gt; //，所有的文件复制均使用COPY指令，仅在需要自动解压缩的场合使用ADD  docker mysql docker run --name mysql -p 12345:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql //启动mysql // 将容器的12345端口映射到主机的3306端口 //--name 给容器命名  hugo hugo new site my-blog //初始化项目 hugo new XX.
     <p></p>
-    <a href="/1/01/2018-07-23/">Read More →</a>
+    <a href="/1/01/2018-07-13/">Read More →</a>
 </article>
     
 
@@ -148,7 +148,7 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/1/01/2018-07-22/">2018-07-22</a>
+            <a class="text-dark" href="/1/01/2018-07-12/">2018-07-12</a>
         </h2>
         
 
@@ -163,9 +163,13 @@
         
         
     </header>
-    本周学习内容  java语言基础、面向对象、集合类、本地文件操作、IO操作、多线程、网络通信和JDBC Maven的配置与使用 Docker中的MySQL、Navicat和IDEA的连接与使用  JDBC 编写流程  加载驱动 打开连接 执行查询 处理结果 清理环境  mysql 增删改查的模板 &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.11&lt;/version&gt; &lt;/dependency&gt;  public class JDBCDemo { public static void main(String [] args){ String sql = &quot;SELECT * FROM tbl_user&quot;; Connection conn = null; Statement st = null; ResultSet rs = null; try{ conn = DriverManager.getConnection(&quot;jdbc:mysql://192.168.99.100:3306/aaoo&quot;,&quot;root&quot;,&quot;1234567&quot;); st = conn.createStatement(); rs = st.executeQuery(sql); while(rs.next()){ System.out.print(rs.getInt(&quot;id&quot;)+&quot; &quot;); System.out.print(rs.getString(&quot;name&quot;)+&quot; &quot;); System.out.print(rs.getString(&quot;password&quot;)+&quot; &quot;); System.
+    git解决冲突 如果push的时候有冲突，则切换到develop分支上，pull一下，然后将有冲突的地方选择一段保留，然后重新上传。
+dockor machine 基本概念  镜像（Image） 是一个特殊的文件系统，包含完整的root文件系统，不包含任何动态数据，其内容在构建之后也不会改变。
+ 分层存储 镜像构建时，会一层层构建，前一层是后一层的基础。每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层。  容器 （Container） 镜像是静态定义，容器是镜像运行时的实体。容器的实质是进程，容器进程运行于属于自己的独立的命名空间，拥有自己的root文件系统、自己的网络配置、自己的进程空间和自己的用户ID空间。
+ 分层存储 每一个容器运行时，以镜像为基础层，在其上创建一个当前容器的存储层，容器存储层的生存周期和容器一样，容器消亡时，容器存储层也随之消亡。所以容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 数据卷（Volume）、或者绑定宿主目录。数据卷的生存周期独立于容器。  仓库（Repository） 集中的存储、分发镜像的服务——Docker Registry 一个Docker Registry可以包含多个仓库；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。
+基本指令  docker-machine ls alias dm=docker-machine //取别名 dm ls dm create test //创建虚拟机 dm env test //指定环境，复制最后一句完成切换 dm stop name //一个一个关，不要强制关机  Docker镜像 使用Dockerfile定制镜像 Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ mkdir mynginx Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ cd mynginx/ Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ touch Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ vi Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ docker build -t nginx:v3 .
     <p></p>
-    <a href="/1/01/2018-07-22/">Read More →</a>
+    <a href="/1/01/2018-07-12/">Read More →</a>
 </article>
     
 
@@ -175,7 +179,7 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/1/01/2018-07-21/">2018-07-21</a>
+            <a class="text-dark" href="/1/01/2018-07-11/">2018-07-11</a>
         </h2>
         
 
@@ -190,10 +194,13 @@
         
         
     </header>
-    考试题1  针对pdf打不开的问题进行改正：
-public class App { public static void main( String[] args ) { try { // 实际不确定文件类型的时候，需要用字节流进行传递，之后会原样输出，否则会有错误 URL url = new URL(&quot;http://192.168.11.205:18080/trainning/SampleChapter1.pdf&quot;); URLConnection connection = url.openConnection(); InputStream is = connection.getInputStream(); byte [] getData = readInputStream(is); File f1 = new File(&quot;Exam1/tmp&quot;); if(!f1.exists()) { f1.mkdir(); } File file = new File(&quot;Exam1/tmp/SampleChapter1.pdf&quot;); FileOutputStream fos = new FileOutputStream(file); fos.write(getData); if (fos!=null){ fos.close(); } if (is != null){ is.close(); } } catch (MalformedURLException e) { e.
+    Git 基本配置 git config --global user.name &quot;李斐文&quot; git config --global user.email &quot;feiwen.li@hand-china.com&quot; git init git clone 网址  上传文件 git add filename git commit -m &quot;注释&quot; git push origin master  把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
+版本回退 git reset -hard commit_id //回退到版本号为commit_id 的版本 git log //查看提交历史，以便确定要回退到哪个版本 git reflog //查看命令历史，以便确定要回到未来的哪个版本。  HEAD指向的版本就是当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+丢弃工作区的修改 当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令
+git checkout -- file  当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步:
+git reset HEAD file git checkout -- file  查看修改 git status //查看文件是否被修改过 git diff //查看修改内容  分支  创建分支  git checkout -b 19892  -b 表示创建并切换 显示分支  git branch  切换分支  git checkout master  将dev分支的工作成果合并到master分支上：  git merge dev   vagrant 安装vagrant 创建目录如下：
     <p></p>
-    <a href="/1/01/2018-07-21/">Read More →</a>
+    <a href="/1/01/2018-07-11/">Read More →</a>
 </article>
     
 
@@ -208,8 +215,8 @@ public class App { public static void main( String[] args ) { try { // 实际不
             <a class="page-link" href="/post/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
         </li>
         
-        <li class="page-item disabled">
-            <a class="page-link" href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+        <li class="page-item ">
+            <a class="page-link" href="/post/page/3/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
         </li>
         
         
@@ -221,7 +228,7 @@ public class App { public static void main( String[] args ) { try { // 实际不
                 
             
             
-                <li class="page-item active">
+                <li class="page-item ">
                     <a class="page-link" href="/post/">1</a>
                 </li>
             
@@ -260,13 +267,13 @@ public class App { public static void main( String[] args ) { try { // 实际不
                 
             
             
-                <li class="page-item ">
+                <li class="page-item active">
                     <a class="page-link" href="/post/page/4/">4</a>
                 </li>
             
         
-        <li class="page-item ">
-            <a class="page-link" href="/post/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+        <li class="page-item disabled">
+            <a class="page-link" href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>
         
             <li class="page-item">

@@ -13,7 +13,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-07-13T17:14:07&#43;08:00"/>
+<meta property="og:updated_time" content="2018-07-13T17:11:36&#43;08:00"/>
 
 
 
@@ -93,11 +93,11 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         
+                            <a class="dropdown-item" href="https://example.com/">English</a>
+                        
                             <a class="dropdown-item" href="https://example.com/es/">Español</a>
                         
                             <a class="dropdown-item" href="https://example.com/de/">Deutsch</a>
-                        
-                            <a class="dropdown-item" href="https://example.com/">English</a>
                         
                     </div>
                 </li>
@@ -122,7 +122,7 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/1/01/2018-07-15/">2018-07-15</a>
+            <a class="text-dark" href="/1/01/2018-07-23/">2018-07-23</a>
         </h2>
         
 
@@ -137,12 +137,9 @@
         
         
     </header>
-    这一周的主要学习内容： - git - 如何配置本地仓库 - 如何与远程仓库建立链接 - 如何将本地文件push到远程仓库 - push遇到冲突的解决办法 - 从远程克隆文件到本地
- docker
- 了解镜像、容器和仓库 从服务器拉取镜像以及使用 Dockerfile的编写（基础）  java基础知识
- static关键词 assert断言 泛型   下周重点自学内容： - java基础知识
+     今日学习 
     <p></p>
-    <a href="/1/01/2018-07-15/">Read More →</a>
+    <a href="/1/01/2018-07-23/">Read More →</a>
 </article>
     
 
@@ -152,7 +149,7 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/1/01/2018-07-13/">2018-07-13</a>
+            <a class="text-dark" href="/1/01/2018-07-22/">2018-07-22</a>
         </h2>
         
 
@@ -167,10 +164,9 @@
         
         
     </header>
-    [TOC]
-总结  nginx和mysql镜像的安装、启动、停止； 学会使用hugo创建一个博客 上传文件到自己的Github  Docker常用命令 docker pull 镜像名:tag //拉取镜像 docker imges |grep nginx //查看名字中有nginx的镜像 docker run -d 镜像名 docker ps //看进程 docker-machine.exe env winpty docker exec -it 89e90b139046 //bin/bash //进入 ps -ef |grep nginx //查看 docker kill 89e90b139046 //在外面kill一个镜像 docker run -d -p 8080:80 -p 8081:80 地址 //映射，一个镜像指出了多个端口，少见，-d 在后台运行 docker push //上传 docker tag name newname //打tag/改名 docker ps -a //查看所有的容器，包括已经停止的 docker rm 容器名orID //删除单个容器 docker rmi 镜像名orID //删除单个镜像   使用docker images时，可能会出现REPOSITORY和TAG均为none的镜像，使用以下命令修改名字：  docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）  Dockerfile COPY &lt;源路径&gt; &lt;目标路径&gt; ADD &lt;源路径&gt; &lt;目标路径&gt; //，所有的文件复制均使用COPY指令，仅在需要自动解压缩的场合使用ADD  docker mysql docker run --name mysql -p 12345:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql //启动mysql // 将容器的12345端口映射到主机的3306端口 //--name 给容器命名  hugo hugo new site my-blog //初始化项目 hugo new XX.
+    本周学习内容  java语言基础、面向对象、集合类、本地文件操作、IO操作、多线程、网络通信和JDBC Maven的配置与使用 Docker中的MySQL、Navicat和IDEA的连接与使用  JDBC 编写流程  加载驱动 打开连接 执行查询 处理结果 清理环境  mysql 增删改查的模板 &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.11&lt;/version&gt; &lt;/dependency&gt;  public class JDBCDemo { public static void main(String [] args){ String sql = &quot;SELECT * FROM tbl_user&quot;; Connection conn = null; Statement st = null; ResultSet rs = null; try{ conn = DriverManager.getConnection(&quot;jdbc:mysql://192.168.99.100:3306/aaoo&quot;,&quot;root&quot;,&quot;1234567&quot;); st = conn.createStatement(); rs = st.executeQuery(sql); while(rs.next()){ System.out.print(rs.getInt(&quot;id&quot;)+&quot; &quot;); System.out.print(rs.getString(&quot;name&quot;)+&quot; &quot;); System.out.print(rs.getString(&quot;password&quot;)+&quot; &quot;); System.
     <p></p>
-    <a href="/1/01/2018-07-13/">Read More →</a>
+    <a href="/1/01/2018-07-22/">Read More →</a>
 </article>
     
 
@@ -180,14 +176,12 @@
         <article class="blog-post">
     <header>
         <h2 class="blog-post-title">
-            <a class="text-dark" href="/2018/07/7-11-%E6%80%BB%E7%BB%93/">7-11 总结</a>
+            <a class="text-dark" href="/1/01/2018-07-21/">2018-07-21</a>
         </h2>
         
 
 
 <div class="blog-post-date text-secondary">
-    
-        Jul 13, 2018
     
     
         by <span rel="author">Feiwen</span>
@@ -197,14 +191,10 @@
         
         
     </header>
-    [TOC]
-Git 基本配置 git config --global user.name &quot;李斐文&quot; git config --global user.email &quot;feiwen.li@hand-china.com&quot; git init git clone 网址  上传文件 git add filename git commit -m &quot;注释&quot; git push origin master  把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
-版本回退 git reset -hard commit_id //回退到版本号为commit_id 的版本 git log //查看提交历史，以便确定要回退到哪个版本 git reflog //查看命令历史，以便确定要回到未来的哪个版本。  HEAD指向的版本就是当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
-丢弃工作区的修改 当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令
-git checkout -- file  当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步:
-git reset HEAD file git checkout -- file  查看修改 git status //查看文件是否被修改过 git diff //查看修改内容  分支  创建分支  git checkout -b 19892  -b 表示创建并切换 显示分支  git branch  切换分支  git checkout master  将dev分支的工作成果合并到master分支上：  git merge dev   vagrant 安装vagrant 创建目录如下：
+    考试题1  针对pdf打不开的问题进行改正：
+public class App { public static void main( String[] args ) { try { // 实际不确定文件类型的时候，需要用字节流进行传递，之后会原样输出，否则会有错误 URL url = new URL(&quot;http://192.168.11.205:18080/trainning/SampleChapter1.pdf&quot;); URLConnection connection = url.openConnection(); InputStream is = connection.getInputStream(); byte [] getData = readInputStream(is); File f1 = new File(&quot;Exam1/tmp&quot;); if(!f1.exists()) { f1.mkdir(); } File file = new File(&quot;Exam1/tmp/SampleChapter1.pdf&quot;); FileOutputStream fos = new FileOutputStream(file); fos.write(getData); if (fos!=null){ fos.close(); } if (is != null){ is.close(); } } catch (MalformedURLException e) { e.
     <p></p>
-    <a href="/2018/07/7-11-%E6%80%BB%E7%BB%93/">Read More →</a>
+    <a href="/1/01/2018-07-21/">Read More →</a>
 </article>
     
 
@@ -250,12 +240,51 @@ git reset HEAD file git checkout -- file  查看修改 git status //查看文件
                 </li>
             
         
+            
+            
+            
+            
+                
+                
+            
+            
+                <li class="page-item ">
+                    <a class="page-link" href="/page/3/">3</a>
+                </li>
+            
+        
+            
+            
+            
+            
+                
+                
+            
+            
+                <li class="page-item disabled">
+                    <span class="page-link" aria-hidden="true">&hellip;</span>
+                </li>
+            
+        
+            
+            
+            
+            
+                
+                
+            
+            
+                <li class="page-item ">
+                    <a class="page-link" href="/page/5/">5</a>
+                </li>
+            
+        
         <li class="page-item ">
             <a class="page-link" href="/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
         </li>
         
             <li class="page-item">
-                <a class="page-link" href="/page/2/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+                <a class="page-link" href="/page/5/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
             </li>
         
     </ul>
@@ -276,23 +305,23 @@ git reset HEAD file git checkout -- file  查看修改 git status //查看文件
     <ol class="list-unstyled">
         
         <li>
-            <a href="/1/01/2018-07-15/">2018-07-15</a>
+            <a href="/post/">19892（李斐文）</a>
         </li>
         
         <li>
-            <a href="/1/01/2018-07-13/">2018-07-13</a>
+            <a href="/1/01/2018-07-23/">2018-07-23</a>
         </li>
         
         <li>
-            <a href="/2018/07/7-11-%E6%80%BB%E7%BB%93/">7-11 总结</a>
+            <a href="/1/01/2018-07-22/">2018-07-22</a>
         </li>
         
         <li>
-            <a href="/2018/07/7-12-%E6%80%BB%E7%BB%93/">7-12 总结</a>
+            <a href="/1/01/2018-07-21/">2018-07-21</a>
         </li>
         
         <li>
-            <a href="/post/">Posts</a>
+            <a href="/1/01/2018-07-20/">2018-07-20</a>
         </li>
         
     </ol>

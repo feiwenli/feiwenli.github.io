@@ -6,10 +6,96 @@
     <description>Recent content on 学习笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Jul 2018 17:14:07 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Jul 2018 17:11:36 +0800</lastBuildDate>
     
 	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2018-07-23</title>
+      <link>https://example.com/1/01/2018-07-23/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/1/01/2018-07-23/</guid>
+      <description> 今日学习 </description>
+    </item>
+    
+    <item>
+      <title>2018-07-22</title>
+      <link>https://example.com/1/01/2018-07-22/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/1/01/2018-07-22/</guid>
+      <description>本周学习内容  java语言基础、面向对象、集合类、本地文件操作、IO操作、多线程、网络通信和JDBC Maven的配置与使用 Docker中的MySQL、Navicat和IDEA的连接与使用  JDBC 编写流程  加载驱动 打开连接 执行查询 处理结果 清理环境  mysql 增删改查的模板 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;8.0.11&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  public class JDBCDemo { public static void main(String [] args){ String sql = &amp;quot;SELECT * FROM tbl_user&amp;quot;; Connection conn = null; Statement st = null; ResultSet rs = null; try{ conn = DriverManager.getConnection(&amp;quot;jdbc:mysql://192.168.99.100:3306/aaoo&amp;quot;,&amp;quot;root&amp;quot;,&amp;quot;1234567&amp;quot;); st = conn.createStatement(); rs = st.executeQuery(sql); while(rs.next()){ System.out.print(rs.getInt(&amp;quot;id&amp;quot;)+&amp;quot; &amp;quot;); System.out.print(rs.getString(&amp;quot;name&amp;quot;)+&amp;quot; &amp;quot;); System.out.print(rs.getString(&amp;quot;password&amp;quot;)+&amp;quot; &amp;quot;); System.</description>
+    </item>
+    
+    <item>
+      <title>2018-07-21</title>
+      <link>https://example.com/1/01/2018-07-21/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/1/01/2018-07-21/</guid>
+      <description>考试题1  针对pdf打不开的问题进行改正：
+public class App { public static void main( String[] args ) { try { // 实际不确定文件类型的时候，需要用字节流进行传递，之后会原样输出，否则会有错误 URL url = new URL(&amp;quot;http://192.168.11.205:18080/trainning/SampleChapter1.pdf&amp;quot;); URLConnection connection = url.openConnection(); InputStream is = connection.getInputStream(); byte [] getData = readInputStream(is); File f1 = new File(&amp;quot;Exam1/tmp&amp;quot;); if(!f1.exists()) { f1.mkdir(); } File file = new File(&amp;quot;Exam1/tmp/SampleChapter1.pdf&amp;quot;); FileOutputStream fos = new FileOutputStream(file); fos.write(getData); if (fos!=null){ fos.close(); } if (is != null){ is.close(); } } catch (MalformedURLException e) { e.</description>
+    </item>
+    
+    <item>
+      <title>2018-07-20</title>
+      <link>https://example.com/1/01/2018-07-20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/1/01/2018-07-20/</guid>
+      <description>今日学习  IO操作 java&amp;amp;XML Socket  二：IO操作 流  基本功能：读和写 字节流：以“Stream”结尾；可以处理所有类型的数据，在读取时，读到一个字节就返回一个字节。 字符流：以“Reader”或“Writer”结尾；仅能处理纯文本数据，在读取时，速到一个或多个字节，先查找指定的编码表，然后将查到的字符返回。  |/ | 字节流 | 字符流 | |&amp;ndash;|&amp;ndash;|&amp;ndash;| | 输入流 | InputStream | Reader | | 输出流 | OutputStream | Writer |
+字节流（Stream）  DataInputStream 和 DataOutputStream 可以以二进制格式读写所有的基本 Java 类型。 FileInputStream 和 FileOutputStream 可以提供附着在一个磁盘文件上的输入流和输出流，而你只需向其构造器提供文件名或文件的完整路径名。 BufferedInputStream(InputStream in)
+创建一个带缓冲区的流。带缓冲区的输入流在从流中读入字符时，不会每次都对设备访问。当缓冲区为空时，会向缓冲区中读入一个新的数据块。 BufferedOutputStream(OutputStream out) 创建一个带缓冲区的流。带缓冲区的输出流在收集要写出的字符时，不会每次都对设备访问。当缓冲区填满或当流被冲刷(flush)时，数据就被写出。 流在默认情况下是不被缓冲区缓存的，如果想使用缓冲机制，以及用于文件的数据输入方法，那么必须要用到以下构造器序列：  DataInputStream din = new DateInputStream( new BufferedInputStream( new FileInputStream(&amp;quot;filename.txt&amp;quot;)));  把 DataInputStream 置于构造器链的最后，这是因为我们希望使用DataInputStream 的方法，并且希望它们能够使用带缓冲机制的 read 方法。 - PushbackInputStream(InputStream in)</description>
+    </item>
+    
+    <item>
+      <title>2018-07-19</title>
+      <link>https://example.com/1/01/2018-07-19/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/1/01/2018-07-19/</guid>
+      <description>今日学习  java集合/本地文件操作/IO操作/多线程 单例模式  一：集合类 Collection接口  可以理解为一个动态的对象数组，不同的时集合中的对象内容可以任意扩充 特点  性能高 容易扩展和修改  Collection的常用子类  List：可以存放任意数据，可重复（在迭代输出时，不能对集合的元素进行删除操作）  ArrayList：非线程安全，异步处理，性能高 Vector：线程安全，同步处理，性能低  Set：不能重复，可以排序  HashSet TreeSet：有序排放  Queue：先进先出   List&amp;lt;String&amp;gt; lists = null; lists = new ArrayList&amp;lt;&amp;gt;(); lists.add(&amp;quot;A&amp;quot;); lists.add(&amp;quot;B&amp;quot;); for(int i=0; i&amp;lt;lists.size();i++){ System.out.println(lists.get(i)); } lists.remove(0); // 查询是否存在 System.out.println(&amp;quot;indexOf &amp;quot;+lists.indexOf(&amp;quot;K&amp;quot;)); // 是否为空 System.out.println(&amp;quot;isEmpty &amp;quot;+lists.isEmpty());  Iterator接口（迭代器）  集合输出的标准操作 专门的迭代输出接口，将元素一个个进行判断，判断其是否有内容，如果有内容，就取出 只能单向移动 元素被访问的顺序取决于集合的类型 调用next时，迭代器就越过下一个元素，并返回刚刚越过的那个元素的引用  List&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;&amp;gt;(); list.add(&amp;quot;D&amp;quot;); list.add(&amp;quot;K&amp;quot;); list.</description>
+    </item>
+    
+    <item>
+      <title>2018-07-18</title>
+      <link>https://example.com/1/01/2018-07-18/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/1/01/2018-07-18/</guid>
+      <description>maven maven 报错 Unknown lifecycle phase &amp;ldquo;–version&amp;rdquo;. You must specify a valid lifecycle pid&amp;gt;:[:]:. Available lifecycle phases a-resources, process-resources, compile, process-classes, generate-test-sources, , test-compile, process-test-classes, test, prepare-package, package, pre-integr deploy, pre-clean, clean, post-clean, pre-site, site, post-site, site-deploy.
+ 解决办法：   第一步：mvn install 第二步：mvn compiler:compile 第三步：mvn org.apache.maven.plugins:maven-compiler-plugin:compile 第四步：mvn org.apache.maven.plugins:maven-compiler-plugin:2.0.2:compile
+ 建立项目 file-&amp;gt;new-&amp;gt;project-&amp;gt;Maven-&amp;gt;Create from archetype-&amp;gt;org.apache.maven.archetypes:maven-archetype-quickstart
+ 父子项目：  在父项目中新建一个maven项目，并将父项目中的src文件删除。
+ pom.xml 文件配置如下，即可以生成可执行jar包。  &amp;lt;build&amp;gt; &amp;lt;sourceDirectory&amp;gt;src/main/java&amp;lt;/sourceDirectory&amp;gt; &amp;lt;finalName&amp;gt;test4&amp;lt;/finalName&amp;gt;&amp;lt;!--你的jar文件的名字--&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;artifactId&amp;gt;maven-assembly-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;appendAssemblyId&amp;gt;false&amp;lt;/appendAssemblyId&amp;gt; &amp;lt;descriptorRefs&amp;gt; &amp;lt;descriptorRef&amp;gt;jar-with-dependencies&amp;lt;/descriptorRef&amp;gt; &amp;lt;/descriptorRefs&amp;gt; &amp;lt;archive&amp;gt; &amp;lt;manifest&amp;gt; &amp;lt;mainClass&amp;gt;com.</description>
+    </item>
+    
+    <item>
+      <title>2018-07-17</title>
+      <link>https://example.com/1/01/2018-07-17/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/1/01/2018-07-17/</guid>
+      <description>一：变量与数据类型  基本数据类型  byte:1字节/short:2字节/int:4字节/long:8字节/float:4字节/double:8字节/char:1字节/bollean:1字节(作为数组中的某个元素),4字节(作为单个变量存储数据) 存放在栈空间，栈空间特点：1. 存储效率高 2. 先进后出 3. 存储空间小，不能存放大量的数据 java底层的byte和short按照32位（int类型）计算。  引用数据类型  String 存放在堆空间： 存取效率最低；存放的位置随机；存储空间大，能存放大容量的数据。  自定义数据类型  变量用来操作内存中的数据。 字面量：java的变量和常量中存放的具体的数据。
+unicode java底层使用一个16位的整数来处理字符类型，该数值是一个unicode编码值。
+for(int i=0;i&amp;lt;=127;i++){ System.out.println((char)i+&amp;quot;:&amp;quot;+i); // 打印出0~127所对应的字符 }  基本数据类型的包装类 Integer.MIN_VALUE //int类型的最小值 Integer.MAX_VALUE int Integer.parseInt(String sInteger); // 将字符串的整数转换为int类型的数据 String Integer.toBinaryString(int value); // 将十进制数转换为二进制，返回结果为String String Integer.toHexString(int value); // 将十进制数转化为十六进制，返回结果为String类型  补码  在计算机系统中，采用二进制的补码来存储。 最高位是符号位，0表示正数，1表示负数。 正数的值是其本身，负数的值是最高为不变，其他位逐位取反，再加1。 两数相加，若高位有进位，则进位被舍弃。（减法也可以按加法来处理） 正数和负数的关系是取反加一。  转义符  \ 反斜杠 \t 间隔 (&amp;rsquo;\u0009&amp;rsquo;) \n 换行 (&amp;rsquo;\u000A&amp;rsquo;) \r 回车 (&amp;rsquo;\u000D&amp;rsquo;) \d 数字 等价于 [0-9] \D 非数字 等价于 [^0-9] \s 空白符号 [\t\n\x0B\f\r] \S 非空白符号 [^\t\n\x0B\f\r] \w 单独字符 [a-zA-Z_0-9] \W 非单独字符 [^a-zA-Z_0-9] \f 换页符 \e Escape \b 一个单词的边界 \B 一个非单词的边界 \G 前一个匹配的结束 \u4e2d 表示unicode编码对应的字符（汉字：中）  类型转换 小类型向大类型转换 由JVM自动完成 - 转换规则：符号为会自动扩展，负数补1，正数补0 byte-&amp;gt;short-&amp;gt;int-&amp;gt;long-&amp;gt;float-&amp;gt;double int和char类型的数据在某些情况下可以自动相互转换 如果小类型的精度值高于大类型的精度值，则有可能出现精度丢失问题。</description>
+    </item>
+    
+    <item>
+      <title>2018-07-16</title>
+      <link>https://example.com/1/01/2018-07-16/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/1/01/2018-07-16/</guid>
+      <description> Maven功能 就是通过pom.xml文件的配置获取jar包，而不用手动去添加jar包。 setting.xml主要用于配置maven的运行环境等一系列通用的属性，是全局级别的配置文件；而pom.xml主要描述了项目的maven坐标，依赖关系，开发者需要遵循的规则，缺陷管理系统，组织和licenses，以及其他所有的项目相关因素，是项目级别的配置文件。
+Maven配置本地库 在setting.xml中设置：
+&amp;lt;localRepository&amp;gt;D:\software\maven\repository&amp;lt;/localRepository&amp;gt;  GroupId 配置：
+&amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;com.test.mytest&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mytest&amp;lt;/artifactId&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;tomcatLocation&amp;gt;${tomcatPath}&amp;lt;/tomcatLocation&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/profiles&amp;gt;  命令行完成配置：
+mvn archetype:generate -DgroupId=com.test.mytest -DartifactId=NumberGenerator -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false  docker之:镜像 使用docker build -t name . 命令来构建一个新的image。这种情况下，如果我们使用了和之前一样的镜像名来命名，那么docker会把这个名字赋给新的镜像，以前的镜像并不会被删除，但是此时它的名字被新的镜像剥夺了，就成为了一个无名镜像，也就是:出现的原因。 这个none镜像会占用磁盘空间，所以我们必须删除它,需要删除引它的容器:
+docker rm $(docker images -f &amp;quot;dangling=true&amp;quot; -q)   rm是删除容器的命令,rmi是删除镜像的命令 然后再删除镜像：  docker rmi $(docker ps -aq)  </description>
+    </item>
     
     <item>
       <title>2018-07-15</title>
@@ -17,10 +103,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/1/01/2018-07-15/</guid>
-      <description>这一周的主要学习内容： - git - 如何配置本地仓库 - 如何与远程仓库建立链接 - 如何将本地文件push到远程仓库 - push遇到冲突的解决办法 - 从远程克隆文件到本地
- docker
+      <description>这一周的主要学习内容：
+ git
+ 如何配置本地仓库 如何与远程仓库建立链接 如何将本地文件push到远程仓库 push遇到冲突的解决办法 从远程克隆文件到本地  docker
  了解镜像、容器和仓库 从服务器拉取镜像以及使用 Dockerfile的编写（基础）  java基础知识
- static关键词 assert断言 泛型   下周重点自学内容： - java基础知识</description>
+ static关键词 assert断言 泛型   本周作业： 博客网址：http://feiwenli.github.io github:https://github.com/feiwenli/myblog
+下周重点自学内容：
+ java基础知识  </description>
     </item>
     
     <item>
@@ -29,38 +118,33 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/1/01/2018-07-13/</guid>
-      <description>[TOC]
-总结  nginx和mysql镜像的安装、启动、停止； 学会使用hugo创建一个博客 上传文件到自己的Github  Docker常用命令 docker pull 镜像名:tag //拉取镜像 docker imges |grep nginx //查看名字中有nginx的镜像 docker run -d 镜像名 docker ps //看进程 docker-machine.exe env winpty docker exec -it 89e90b139046 //bin/bash //进入 ps -ef |grep nginx //查看 docker kill 89e90b139046 //在外面kill一个镜像 docker run -d -p 8080:80 -p 8081:80 地址 //映射，一个镜像指出了多个端口，少见，-d 在后台运行 docker push //上传 docker tag name newname //打tag/改名 docker ps -a //查看所有的容器，包括已经停止的 docker rm 容器名orID //删除单个容器 docker rmi 镜像名orID //删除单个镜像   使用docker images时，可能会出现REPOSITORY和TAG均为none的镜像，使用以下命令修改名字：  docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）  Dockerfile COPY &amp;lt;源路径&amp;gt; &amp;lt;目标路径&amp;gt; ADD &amp;lt;源路径&amp;gt; &amp;lt;目标路径&amp;gt; //，所有的文件复制均使用COPY指令，仅在需要自动解压缩的场合使用ADD  docker mysql docker run --name mysql -p 12345:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql //启动mysql // 将容器的12345端口映射到主机的3306端口 //--name 给容器命名  hugo hugo new site my-blog //初始化项目 hugo new XX.</description>
+      <description>总结  nginx和mysql镜像的安装、启动、停止； 学会使用hugo创建一个博客 上传文件到自己的Github  Docker常用命令 docker pull 镜像名:tag //拉取镜像 docker imges |grep nginx //查看名字中有nginx的镜像 docker run -d 镜像名 docker ps //看进程 docker-machine.exe env winpty docker exec -it 89e90b139046 //bin/bash //进入 ps -ef |grep nginx //查看 docker kill 89e90b139046 //在外面kill一个镜像 docker run -d -p 8080:80 -p 8081:80 地址 //映射，一个镜像指出了多个端口，少见，-d 在后台运行 docker push //上传 docker tag name newname //打tag/改名 docker ps -a //查看所有的容器，包括已经停止的 docker rm 容器名orID //删除单个容器 docker rmi 镜像名orID //删除单个镜像   使用docker images时，可能会出现REPOSITORY和TAG均为none的镜像，使用以下命令修改名字：  docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）  Dockerfile COPY &amp;lt;源路径&amp;gt; &amp;lt;目标路径&amp;gt; ADD &amp;lt;源路径&amp;gt; &amp;lt;目标路径&amp;gt; //，所有的文件复制均使用COPY指令，仅在需要自动解压缩的场合使用ADD  docker mysql docker run --name mysql -p 12345:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql //启动mysql // 将容器的12345端口映射到主机的3306端口 //--name 给容器命名  hugo hugo new site my-blog //初始化项目 hugo new XX.</description>
     </item>
     
     <item>
-      <title>7-11 总结</title>
-      <link>https://example.com/2018/07/7-11-%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Fri, 13 Jul 2018 17:14:07 +0800</pubDate>
+      <title>2018-07-12</title>
+      <link>https://example.com/1/01/2018-07-12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2018/07/7-11-%E6%80%BB%E7%BB%93/</guid>
-      <description>[TOC]
-Git 基本配置 git config --global user.name &amp;quot;李斐文&amp;quot; git config --global user.email &amp;quot;feiwen.li@hand-china.com&amp;quot; git init git clone 网址  上传文件 git add filename git commit -m &amp;quot;注释&amp;quot; git push origin master  把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
+      <guid>https://example.com/1/01/2018-07-12/</guid>
+      <description>git解决冲突 如果push的时候有冲突，则切换到develop分支上，pull一下，然后将有冲突的地方选择一段保留，然后重新上传。
+dockor machine 基本概念  镜像（Image） 是一个特殊的文件系统，包含完整的root文件系统，不包含任何动态数据，其内容在构建之后也不会改变。
+ 分层存储 镜像构建时，会一层层构建，前一层是后一层的基础。每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层。  容器 （Container） 镜像是静态定义，容器是镜像运行时的实体。容器的实质是进程，容器进程运行于属于自己的独立的命名空间，拥有自己的root文件系统、自己的网络配置、自己的进程空间和自己的用户ID空间。
+ 分层存储 每一个容器运行时，以镜像为基础层，在其上创建一个当前容器的存储层，容器存储层的生存周期和容器一样，容器消亡时，容器存储层也随之消亡。所以容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 数据卷（Volume）、或者绑定宿主目录。数据卷的生存周期独立于容器。  仓库（Repository） 集中的存储、分发镜像的服务——Docker Registry 一个Docker Registry可以包含多个仓库；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。
+基本指令  docker-machine ls alias dm=docker-machine //取别名 dm ls dm create test //创建虚拟机 dm env test //指定环境，复制最后一句完成切换 dm stop name //一个一个关，不要强制关机  Docker镜像 使用Dockerfile定制镜像 Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ mkdir mynginx Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ cd mynginx/ Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ touch Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ vi Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ docker build -t nginx:v3 .</description>
+    </item>
+    
+    <item>
+      <title>2018-07-11</title>
+      <link>https://example.com/1/01/2018-07-11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/1/01/2018-07-11/</guid>
+      <description>Git 基本配置 git config --global user.name &amp;quot;李斐文&amp;quot; git config --global user.email &amp;quot;feiwen.li@hand-china.com&amp;quot; git init git clone 网址  上传文件 git add filename git commit -m &amp;quot;注释&amp;quot; git push origin master  把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
 版本回退 git reset -hard commit_id //回退到版本号为commit_id 的版本 git log //查看提交历史，以便确定要回退到哪个版本 git reflog //查看命令历史，以便确定要回到未来的哪个版本。  HEAD指向的版本就是当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
 丢弃工作区的修改 当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令
 git checkout -- file  当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步:
 git reset HEAD file git checkout -- file  查看修改 git status //查看文件是否被修改过 git diff //查看修改内容  分支  创建分支  git checkout -b 19892  -b 表示创建并切换 显示分支  git branch  切换分支  git checkout master  将dev分支的工作成果合并到master分支上：  git merge dev   vagrant 安装vagrant 创建目录如下：</description>
-    </item>
-    
-    <item>
-      <title>7-12 总结</title>
-      <link>https://example.com/2018/07/7-12-%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Fri, 13 Jul 2018 17:14:07 +0800</pubDate>
-      
-      <guid>https://example.com/2018/07/7-12-%E6%80%BB%E7%BB%93/</guid>
-      <description>[TOC]
-git解决冲突 如果push的时候有冲突，则切换到develop分支上，pull一下，然后将有冲突的地方选择一段保留，然后重新上传。
-dockor machine 基本概念  镜像（Image） 是一个特殊的文件系统，包含完整的root文件系统，不包含任何动态数据，其内容在构建之后也不会改变。
- 分层存储 镜像构建时，会一层层构建，前一层是后一层的基础。每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层。  容器 （Container） 镜像是静态定义，容器是镜像运行时的实体。容器的实质是进程，容器进程运行于属于自己的独立的命名空间，拥有自己的root文件系统、自己的网络配置、自己的进程空间和自己的用户ID空间。
- 分层存储 每一个容器运行时，以镜像为基础层，在其上创建一个当前容器的存储层，容器存储层的生存周期和容器一样，容器消亡时，容器存储层也随之消亡。所以容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 数据卷（Volume）、或者绑定宿主目录。数据卷的生存周期独立于容器。  仓库（Repository） 集中的存储、分发镜像的服务——Docker Registry 一个Docker Registry可以包含多个仓库；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。
-基本指令 ```shell docker-machine ls alias dm=docker-machine //取别名 dm ls
-  dm create test //创建虚拟机 dm env test //指定环境，复制最后一句完成切换 dm stop name //一个一个关，不要强制关机
-### Docker镜像 #### 使用Dockerfile定制镜像 ```shell Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ mkdir mynginx Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain $ cd mynginx/ Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ touch Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ vi Dockerfile Feiwem@DESKTOP-A65JLV2 MINGW64 /d/dockerTrain/mynginx $ docker build -t nginx:v3 .</description>
     </item>
     
     <item>

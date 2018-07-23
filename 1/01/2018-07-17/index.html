@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="2018-07-17" />
+<meta property="og:description" content="一：变量与数据类型  基本数据类型  byte:1字节/short:2字节/int:4字节/long:8字节/float:4字节/double:8字节/char:1字节/bollean:1字节(作为数组中的某个元素),4字节(作为单个变量存储数据) 存放在栈空间，栈空间特点：1. 存储效率高 2. 先进后出 3. 存储空间小，不能存放大量的数据 java底层的byte和short按照32位（int类型）计算。  引用数据类型  String 存放在堆空间： 存取效率最低；存放的位置随机；存储空间大，能存放大容量的数据。  自定义数据类型  变量用来操作内存中的数据。 字面量：java的变量和常量中存放的具体的数据。
+unicode java底层使用一个16位的整数来处理字符类型，该数值是一个unicode编码值。
+for(int i=0;i&lt;=127;i&#43;&#43;){ System.out.println((char)i&#43;&quot;:&quot;&#43;i); // 打印出0~127所对应的字符 }  基本数据类型的包装类 Integer.MIN_VALUE //int类型的最小值 Integer.MAX_VALUE int Integer.parseInt(String sInteger); // 将字符串的整数转换为int类型的数据 String Integer.toBinaryString(int value); // 将十进制数转换为二进制，返回结果为String String Integer.toHexString(int value); // 将十进制数转化为十六进制，返回结果为String类型  补码  在计算机系统中，采用二进制的补码来存储。 最高位是符号位，0表示正数，1表示负数。 正数的值是其本身，负数的值是最高为不变，其他位逐位取反，再加1。 两数相加，若高位有进位，则进位被舍弃。（减法也可以按加法来处理） 正数和负数的关系是取反加一。  转义符  \ 反斜杠 \t 间隔 (&rsquo;\u0009&rsquo;) \n 换行 (&rsquo;\u000A&rsquo;) \r 回车 (&rsquo;\u000D&rsquo;) \d 数字 等价于 [0-9] \D 非数字 等价于 [^0-9] \s 空白符号 [\t\n\x0B\f\r] \S 非空白符号 [^\t\n\x0B\f\r] \w 单独字符 [a-zA-Z_0-9] \W 非单独字符 [^a-zA-Z_0-9] \f 换页符 \e Escape \b 一个单词的边界 \B 一个非单词的边界 \G 前一个匹配的结束 \u4e2d 表示unicode编码对应的字符（汉字：中）  类型转换 小类型向大类型转换 由JVM自动完成 - 转换规则：符号为会自动扩展，负数补1，正数补0 byte-&gt;short-&gt;int-&gt;long-&gt;float-&gt;double int和char类型的数据在某些情况下可以自动相互转换 如果小类型的精度值高于大类型的精度值，则有可能出现精度丢失问题。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/1/01/2018-07-17/" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2018-07-17"/>
+<meta name="twitter:description" content="一：变量与数据类型  基本数据类型  byte:1字节/short:2字节/int:4字节/long:8字节/float:4字节/double:8字节/char:1字节/bollean:1字节(作为数组中的某个元素),4字节(作为单个变量存储数据) 存放在栈空间，栈空间特点：1. 存储效率高 2. 先进后出 3. 存储空间小，不能存放大量的数据 java底层的byte和short按照32位（int类型）计算。  引用数据类型  String 存放在堆空间： 存取效率最低；存放的位置随机；存储空间大，能存放大容量的数据。  自定义数据类型  变量用来操作内存中的数据。 字面量：java的变量和常量中存放的具体的数据。
+unicode java底层使用一个16位的整数来处理字符类型，该数值是一个unicode编码值。
+for(int i=0;i&lt;=127;i&#43;&#43;){ System.out.println((char)i&#43;&quot;:&quot;&#43;i); // 打印出0~127所对应的字符 }  基本数据类型的包装类 Integer.MIN_VALUE //int类型的最小值 Integer.MAX_VALUE int Integer.parseInt(String sInteger); // 将字符串的整数转换为int类型的数据 String Integer.toBinaryString(int value); // 将十进制数转换为二进制，返回结果为String String Integer.toHexString(int value); // 将十进制数转化为十六进制，返回结果为String类型  补码  在计算机系统中，采用二进制的补码来存储。 最高位是符号位，0表示正数，1表示负数。 正数的值是其本身，负数的值是最高为不变，其他位逐位取反，再加1。 两数相加，若高位有进位，则进位被舍弃。（减法也可以按加法来处理） 正数和负数的关系是取反加一。  转义符  \ 反斜杠 \t 间隔 (&rsquo;\u0009&rsquo;) \n 换行 (&rsquo;\u000A&rsquo;) \r 回车 (&rsquo;\u000D&rsquo;) \d 数字 等价于 [0-9] \D 非数字 等价于 [^0-9] \s 空白符号 [\t\n\x0B\f\r] \S 非空白符号 [^\t\n\x0B\f\r] \w 单独字符 [a-zA-Z_0-9] \W 非单独字符 [^a-zA-Z_0-9] \f 换页符 \e Escape \b 一个单词的边界 \B 一个非单词的边界 \G 前一个匹配的结束 \u4e2d 表示unicode编码对应的字符（汉字：中）  类型转换 小类型向大类型转换 由JVM自动完成 - 转换规则：符号为会自动扩展，负数补1，正数补0 byte-&gt;short-&gt;int-&gt;long-&gt;float-&gt;double int和char类型的数据在某些情况下可以自动相互转换 如果小类型的精度值高于大类型的精度值，则有可能出现精度丢失问题。"/>
+
+
+
+    <link rel="canonical" href="https://example.com/1/01/2018-07-17/">
+
+    <title>
+      
+        2018-07-17 | 学习笔记
+      
+    </title>
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link href="https://example.com/css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      <header class="blog-header">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            学习笔记
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/">Home</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/about/">About</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/contact/">Contact</a>
+                    
+                </li>
+                
+            </ul>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        
+                            <a class="dropdown-item" href="https://example.com/">English</a>
+                        
+                            <a class="dropdown-item" href="https://example.com/es/">Español</a>
+                        
+                            <a class="dropdown-item" href="https://example.com/de/">Deutsch</a>
+                        
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+</header>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8 blog-main">
+
+          
+
+<header>
+    <h2 class="blog-post-title">
+        <a class="text-dark" href="/1/01/2018-07-17/">2018-07-17</a>
+    </h2>
+    
+
+
+<div class="blog-post-date text-secondary">
+    
+    
+        by <span rel="author">Feiwen</span>
+    
+</div>
+
+    
+    
+    <hr>
+</header>
+<article class="blog-post">
+    
+
+<hr />
+
+<h2 id="一-变量与数据类型">一：变量与数据类型</h2>
+
+<ul>
+<li>基本数据类型
+
+<ul>
+<li>byte:1字节/short:2字节/int:4字节/long:8字节/float:4字节/double:8字节/char:1字节/bollean:1字节(作为数组中的某个元素),4字节(作为单个变量存储数据)</li>
+<li>存放在栈空间，栈空间特点：1. 存储效率高 2. 先进后出 3. 存储空间小，不能存放大量的数据</li>
+<li>java底层的byte和short按照32位（int类型）计算。</li>
+</ul></li>
+<li>引用数据类型
+
+<ul>
+<li>String</li>
+<li>存放在堆空间：
+存取效率最低；存放的位置随机；存储空间大，能存放大容量的数据。</li>
+</ul></li>
+<li>自定义数据类型</li>
+</ul>
+
+<p>变量用来操作内存中的数据。
+字面量：java的变量和常量中存放的具体的数据。</p>
+
+<hr />
+
+<h3 id="unicode">unicode</h3>
+
+<p>java底层使用一个16位的整数来处理字符类型，该数值是一个unicode编码值。</p>
+
+<pre><code class="language-java">        for(int i=0;i&lt;=127;i++){
+            System.out.println((char)i+&quot;:&quot;+i);    // 打印出0~127所对应的字符
+        }
+</code></pre>
+
+<h3 id="基本数据类型的包装类">基本数据类型的包装类</h3>
+
+<pre><code class="language-java">Integer.MIN_VALUE    //int类型的最小值
+Integer.MAX_VALUE
+int Integer.parseInt(String sInteger);    // 将字符串的整数转换为int类型的数据
+String Integer.toBinaryString(int value);    // 将十进制数转换为二进制，返回结果为String
+String Integer.toHexString(int value);    // 将十进制数转化为十六进制，返回结果为String类型
+</code></pre>
+
+<h3 id="补码">补码</h3>
+
+<ul>
+<li>在计算机系统中，采用二进制的补码来存储。</li>
+<li>最高位是符号位，0表示正数，1表示负数。</li>
+<li>正数的值是其本身，负数的值是最高为不变，其他位逐位取反，再加1。</li>
+<li>两数相加，若高位有进位，则进位被舍弃。（减法也可以按加法来处理）</li>
+<li>正数和负数的关系是取反加一。</li>
+</ul>
+
+<h3 id="转义符">转义符</h3>
+
+<ul>
+<li>\ 反斜杠</li>
+<li>\t 间隔 (&rsquo;\u0009&rsquo;)</li>
+<li>\n 换行 (&rsquo;\u000A&rsquo;)</li>
+<li>\r 回车 (&rsquo;\u000D&rsquo;)</li>
+<li>\d 数字 等价于 [0-9]</li>
+<li>\D 非数字 等价于 [^0-9]</li>
+<li>\s 空白符号 [\t\n\x0B\f\r]</li>
+<li>\S 非空白符号 [^\t\n\x0B\f\r]</li>
+<li>\w 单独字符 [a-zA-Z_0-9]</li>
+<li>\W 非单独字符 [^a-zA-Z_0-9]</li>
+<li>\f 换页符</li>
+<li>\e Escape</li>
+<li>\b 一个单词的边界</li>
+<li>\B 一个非单词的边界</li>
+<li>\G 前一个匹配的结束</li>
+<li>\u4e2d 表示unicode编码对应的字符（汉字：中）</li>
+</ul>
+
+<h3 id="类型转换">类型转换</h3>
+
+<h4 id="小类型向大类型转换">小类型向大类型转换</h4>
+
+<p>由JVM自动完成
+- 转换规则：符号为会自动扩展，负数补1，正数补0
+byte-&gt;short-&gt;int-&gt;long-&gt;float-&gt;double
+int和char类型的数据在某些情况下可以自动相互转换
+如果小类型的精度值高于大类型的精度值，则有可能出现精度丢失问题。</p>
+
+<h4 id="大类型向小类型转换">大类型向小类型转换</h4>
+
+<p>强制类型转换</p>
+
+<pre><code class="language-java">int i = 129;
+byte b = (byte)i;    // 大类型的数据位转换为小类型的符号位，逐位取反再加1，b的值为-127
+</code></pre>
+
+<pre><code class="language-java">int i = 257;
+byte b = (byte)i;    // 257超过了byte所能存储的最大位数，只能保留后8位，为1，最高位丢失了
+</code></pre>
+
+<h4 id="char-int">char int</h4>
+
+<p>java对char类型的数据在底层是按int类型处理的。
+字符类型的变量可进行数学计算。</p>
+
+<h3 id="scanner类">Scanner类</h3>
+
+<p>用于扫描从控制台输入的数据，可以接收字符串和基本数据类型的数据。
+位于java.util.Scanner包中。</p>
+
+<pre><code class="language-java">String next();    // 接收一个字符串
+String nextLine();    // 接收一行字符串
+int nexInt();    // 接收一个Int类型的数据
+double nextDouble();    // 接收一个Double类型的数据
+bollean nextBoolean();    // 接收一个Boolean类型的数据
+// 接收char类型的数据
+// 通过charAt()方法从next()或者nextLine()获取输入的字符串。
+char String.charAt(int index);
+</code></pre>
+
+<pre><code class="language-java">        Scanner s = new Scanner(System.in);
+        System.out.println(&quot;姓名：&quot;);
+        String name = s.next();
+        System.out.println(&quot;性别：&quot;);
+        String sex = s.next();
+        System.out.println(&quot;年龄：&quot;);
+        int age = s.nextInt();
+</code></pre>
+
+<h3 id="交换两个变量">交换两个变量</h3>
+
+<p>在不增加其它变量的情况下：</p>
+
+<pre><code class="language-java">a=a+b;
+b=a-b;
+a=a-b;
+</code></pre>
+
+<h3 id="错误类型">错误类型</h3>
+
+<ul>
+<li>编译期语法错误</li>
+<li>运行期异常</li>
+<li>运行期逻辑错误</li>
+</ul>
+
+<h2 id="二-语言逻辑运算">二：语言逻辑运算</h2>
+
+<p>&amp; 在两边都是整数时，是逐位与运算；在两边是关系运算时，是逻辑运算。
+优先级：
+! &gt; &amp; &gt; |</p>
+
+<hr />
+
+<h2 id="三-数组">三：数组</h2>
+
+<p>默认值为Null</p>
+
+<pre><code class="language-java">type arrayName[] = new type[n];
+type [] arrayName = null;
+type arrayName[][] = new type[n][m];
+</code></pre>
+
+<h3 id="初始化">初始化</h3>
+
+<ul>
+<li>静态初始化
+为其开辟内存空间；
+在创建之初直接指定内容；</li>
+</ul>
+
+<pre><code class="language-java">int score []={1,2,3,4,5,6,7,8};
+</code></pre>
+
+<ul>
+<li>动态初始化
+所有内容不会具体指定，都是默认值。</li>
+</ul>
+
+<hr />
+
+<h2 id="四-字符串">四：字符串</h2>
+
+<h3 id="string">String</h3>
+
+<ul>
+<li>是不可更改的。</li>
+<li>equals比较内容</li>
+<li>== 比较的是地址</li>
+</ul>
+
+<pre><code class="language-java">String.length();
+Sting.toCharArray();    //字符串转化为数组
+String.charAt();    // 从字符串中取出指定位置的字符串
+String.getBytes();     // 字符串与byte数组的转换
+String.indexOf();     // 过滤字符串中存在的字符，如果有，返回当前字符的位置，如果没有，返回-1
+String.trim();    //去掉字符串的前后空格
+String.subString();    // 提取子串
+String.toLowerCase();    // 小写
+String.toUpperCase();
+String.endWith();    // 以什么开头
+Sting.startWith();
+String.replace();    // 替换一个字符
+</code></pre>
+
+<p><a href="https://blog.csdn.net/yang3wei/article/details/7381578">getBytes</a></p>
+
+<h3 id="stringbuffer">StringBuffer</h3>
+
+<p>缓冲区，本身也是操作字符串，是可以更改的。</p>
+
+<pre><code class="language-java">StringBuffer sb = new StringBuffer();
+sb.append(&quot;hello&quot;);
+sb.insert(0,&quot;hi&quot;);
+sb.replace(1,4,&quot;uuuu&quot;);
+sb.indexOf(&quot;h&quot;);
+</code></pre>
+
+<h3 id="stringbuilder">StringBuilder</h3>
+
+<p>一个可变的字符列表，该类被设计作用StringBuffer的一个简易替换，用在字符串缓冲区被单个线程使用的时候。</p>
+
+<h3 id="比较">比较</h3>
+
+<p>运行速度：StringBuilder &gt; StringBuffer &gt; String
+线程安全：StringBuilder是线程不安全的，而StringBuffer是线程安全的
+String：适用于少量的字符串操作的情况
+StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况
+StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</p>
+
+<hr />
+
+<h2 id="五-异常">五：异常</h2>
+
+<ul>
+<li>throws</li>
+</ul>
+
+<pre><code class="language-java">public void tell() throws Exception{}
+// 表示此方法不处理异常，抛给方法的调用者处理。
+</code></pre>
+
+<h3 id="自定义异常">自定义异常</h3>
+
+<pre><code class="language-java">// 自定义异常
+class MyException extends Exception{
+    MyException(String msg){
+        super(msg);
+    }
+}
+... ...
+        try{
+            throw new MyException(&quot;实例化异常对象&quot;);
+        }catch (MyException e){
+            System.out.println(e+&quot;.&quot;);
+        }
+</code></pre>
+
+<hr />
+
+<h2 id="面向对象">面向对象</h2>
+
+<h3 id="this关键字">this关键字</h3>
+
+<ul>
+<li>表示类中的属性和调用方法</li>
+<li>调用本类中的构造方法</li>
+<li>表示当前对象</li>
+</ul>
+
+<pre><code class="language-java">class People{
+    private String name;
+    private int age;
+    public People(String name,int age){
+        this(); //调用构造方法
+        this.name = name;
+        this.age = age;
+    }
+    public People(){
+        System.out.println(&quot;无参数的构造方法&quot;);
+    }
+    public void tell(){
+        System.out.println(this); // 表示当前对象，People@1b6d3586
+    }
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+}
+public class TestThis {
+    public static void main(String [] args){
+        People p = new People(&quot;zhangsan&quot;, 90);
+        System.out.println(p.getAge()+&quot; &quot;+p.getName());
+        p.tell();
+        System.out.println(p); //People@1b6d3586
+    }
+}
+</code></pre>
+
+<hr />
+
+<h2 id="函数">函数</h2>
+
+<pre><code class="language-java">Math.round()    //保留小数点后面第一位
+System.out.println(Math.round(1.5)+&quot; &quot;+Math.round(-1.5));    //2 -1
+</code></pre>
+
+
+    
+
+    
+
+
+</article>
+
+
+
+        </div>
+
+        <aside class="col-12 col-lg-3 ml-auto blog-sidebar">
+    
+        
+
+
+<section>
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+        
+        <li>
+            <a href="/post/">19892（李斐文）</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-23/">2018-07-23</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-22/">2018-07-22</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-21/">2018-07-21</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-20/">2018-07-20</a>
+        </li>
+        
+    </ol>
+</section>
+
+    
+    
+        <section>
+    
+        
+    
+        
+    
+        
+    
+</section>
+    
+</aside>
+
+      </div>
+    </div>
+    
+
+    
+      
+
+
+
+
+
+
+<footer class="blog-footer w-100">
+    <nav class="navbar navbar-light bg-light">
+        <p class="w-100 text-center">Hugo template made with ❤ by <a href="https://github.com/Xzya">Xzya</a>, inspired by <a href="https://github.com/alanorth/hugo-theme-bootstrap4-blog">hugo-theme-bootstrap4-blog</a></p>
+        <p class="w-100 text-center"><a href="#">Back to top</a></p>
+    </nav>
+</footer>
+
+    
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>

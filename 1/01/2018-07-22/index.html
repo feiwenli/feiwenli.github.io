@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="2018-07-22" />
+<meta property="og:description" content="本周学习内容  java语言基础、面向对象、集合类、本地文件操作、IO操作、多线程、网络通信和JDBC Maven的配置与使用 Docker中的MySQL、Navicat和IDEA的连接与使用  JDBC 编写流程  加载驱动 打开连接 执行查询 处理结果 清理环境  mysql 增删改查的模板 &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.11&lt;/version&gt; &lt;/dependency&gt;  public class JDBCDemo { public static void main(String [] args){ String sql = &quot;SELECT * FROM tbl_user&quot;; Connection conn = null; Statement st = null; ResultSet rs = null; try{ conn = DriverManager.getConnection(&quot;jdbc:mysql://192.168.99.100:3306/aaoo&quot;,&quot;root&quot;,&quot;1234567&quot;); st = conn.createStatement(); rs = st.executeQuery(sql); while(rs.next()){ System.out.print(rs.getInt(&quot;id&quot;)&#43;&quot; &quot;); System.out.print(rs.getString(&quot;name&quot;)&#43;&quot; &quot;); System.out.print(rs.getString(&quot;password&quot;)&#43;&quot; &quot;); System." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/1/01/2018-07-22/" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2018-07-22"/>
+<meta name="twitter:description" content="本周学习内容  java语言基础、面向对象、集合类、本地文件操作、IO操作、多线程、网络通信和JDBC Maven的配置与使用 Docker中的MySQL、Navicat和IDEA的连接与使用  JDBC 编写流程  加载驱动 打开连接 执行查询 处理结果 清理环境  mysql 增删改查的模板 &lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt; &lt;version&gt;8.0.11&lt;/version&gt; &lt;/dependency&gt;  public class JDBCDemo { public static void main(String [] args){ String sql = &quot;SELECT * FROM tbl_user&quot;; Connection conn = null; Statement st = null; ResultSet rs = null; try{ conn = DriverManager.getConnection(&quot;jdbc:mysql://192.168.99.100:3306/aaoo&quot;,&quot;root&quot;,&quot;1234567&quot;); st = conn.createStatement(); rs = st.executeQuery(sql); while(rs.next()){ System.out.print(rs.getInt(&quot;id&quot;)&#43;&quot; &quot;); System.out.print(rs.getString(&quot;name&quot;)&#43;&quot; &quot;); System.out.print(rs.getString(&quot;password&quot;)&#43;&quot; &quot;); System."/>
+
+
+
+    <link rel="canonical" href="https://example.com/1/01/2018-07-22/">
+
+    <title>
+      
+        2018-07-22 | 学习笔记
+      
+    </title>
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link href="https://example.com/css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      <header class="blog-header">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            学习笔记
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/">Home</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/about/">About</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/contact/">Contact</a>
+                    
+                </li>
+                
+            </ul>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        
+                            <a class="dropdown-item" href="https://example.com/">English</a>
+                        
+                            <a class="dropdown-item" href="https://example.com/es/">Español</a>
+                        
+                            <a class="dropdown-item" href="https://example.com/de/">Deutsch</a>
+                        
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+</header>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8 blog-main">
+
+          
+
+<header>
+    <h2 class="blog-post-title">
+        <a class="text-dark" href="/1/01/2018-07-22/">2018-07-22</a>
+    </h2>
+    
+
+
+<div class="blog-post-date text-secondary">
+    
+    
+        by <span rel="author">Feiwen</span>
+    
+</div>
+
+    
+    
+    <hr>
+</header>
+<article class="blog-post">
+    
+
+<h2 id="本周学习内容">本周学习内容</h2>
+
+<ul>
+<li>java语言基础、面向对象、集合类、本地文件操作、IO操作、多线程、网络通信和JDBC</li>
+<li>Maven的配置与使用</li>
+<li>Docker中的MySQL、Navicat和IDEA的连接与使用</li>
+</ul>
+
+<h2 id="jdbc">JDBC</h2>
+
+<h3 id="编写流程">编写流程</h3>
+
+<ul>
+<li>加载驱动</li>
+<li>打开连接</li>
+<li>执行查询</li>
+<li>处理结果</li>
+<li>清理环境</li>
+</ul>
+
+<h3 id="mysql-增删改查的模板">mysql 增删改查的模板</h3>
+
+<pre><code class="language-xml">&lt;dependency&gt;
+            &lt;groupId&gt;mysql&lt;/groupId&gt;
+            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+            &lt;version&gt;8.0.11&lt;/version&gt;
+        &lt;/dependency&gt;
+</code></pre>
+
+<pre><code class="language-java">public class JDBCDemo {
+    public static void main(String [] args){
+        String sql = &quot;SELECT * FROM tbl_user&quot;;
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try{
+            conn = DriverManager.getConnection(&quot;jdbc:mysql://192.168.99.100:3306/aaoo&quot;,&quot;root&quot;,&quot;1234567&quot;);
+            st = conn.createStatement();
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                System.out.print(rs.getInt(&quot;id&quot;)+&quot; &quot;);
+                System.out.print(rs.getString(&quot;name&quot;)+&quot; &quot;);
+                System.out.print(rs.getString(&quot;password&quot;)+&quot; &quot;);
+                System.out.print(rs.getString(&quot;email&quot;)+ &quot; &quot;);
+                System.out.println(&quot;&quot;);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                st.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+</code></pre>
+
+<h3 id="事务">事务</h3>
+
+<ul>
+<li>原子性</li>
+<li>一致性</li>
+<li>隔离性</li>
+
+<li><p>持久性</p></li>
+
+<li><p>开始事务：BEGIN TRANSACTION</p></li>
+
+<li><p>提交事务：COMMIT TRANSACTION</p></li>
+
+<li><p>回滚事务：ROLLBACK TRANSACTION</p></li>
+</ul>
+
+<h3 id="优化">优化</h3>
+
+<p>dbconfig.properties 要放在Resources目录中，并把Resources目录设置为Make Directory as&mdash;Resourses Root</p>
+
+<ul>
+<li>dbconfig.properties：</li>
+</ul>
+
+<pre><code>dburl=jdbc\:mysql\://192.168.99.100\:3306/aaoo
+user=root
+password=1234567
+</code></pre>
+
+<ul>
+<li>获取连接</li>
+</ul>
+
+<pre><code class="language-java">public class ConnectionFactory {
+    private static String dburl;
+    private static String user;
+    private static String password;
+
+    private static ConnectionFactory factory = new ConnectionFactory();
+    private Connection conn;
+    static{
+        // 保存属性文件中的键值对
+        Properties properties = new Properties();
+        try{
+            // 首先获取当前类的类加载器，调用getResourceAsStream方法读取内容
+            InputStream in = ConnectionFactory.class.getClassLoader().getResourceAsStream(&quot;dbconfig.properties&quot;);
+            // 从输入流中读取值
+            properties.load(in);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        dburl = properties.getProperty(&quot;dburl&quot;);
+        user = properties.getProperty(&quot;user&quot;);
+        password = properties.getProperty(&quot;password&quot;);
+    }
+    private ConnectionFactory(){ }
+    protected static ConnectionFactory getInstance(){
+        return factory;
+    }
+    public Connection makeConnection(){
+        try{
+            conn = DriverManager.getConnection(dburl, user, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return conn;
+    }
+}
+</code></pre>
+
+<ul>
+<li>ID抽象类</li>
+</ul>
+
+<pre><code class="language-java">public abstract class IdEntity {
+    protected Long id;
+    public Long getId(){
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }   
+}
+</code></pre>
+
+<ul>
+<li>User类</li>
+</ul>
+
+<pre><code class="language-java">public class User extends IdEntity{
+    private String name;
+    private String password;
+    private String email;
+    public String getName() {
+        return name;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    @Override
+    public String toString() {
+        return &quot;Usr [name=&quot;+name+&quot;,password=&quot;+password+&quot;,email=&quot;+email+&quot;,id=&quot;+id+&quot;]&quot;;
+    }
+}
+</code></pre>
+
+<ul>
+<li>User建立连接的接口</li>
+</ul>
+
+<p>DAO 提供了应用程序与数据库之间的操作规范和操作用于通常数据库的增删查改 一般如果使用框架 都是由框架自动生成，提高访问效率和便于快速开发。</p>
+
+<pre><code class="language-java">public interface UserDao {
+    public void save(Connection conn, User user)throws SQLException;
+    public void update(Connection conn, Long id, User user)throws SQLException;
+    public void delete(Connection conn, User user) throws SQLException;
+}
+</code></pre>
+
+<ul>
+<li>增删改保存的实现
+以IMPL 结尾的类一般是实现了某个或多个接口的类，这些类的接口是定义了一些规范的类，通常是数据访问等等，在service 中会通过spring的注入注入这些接口来实现逻辑。</li>
+</ul>
+
+<pre><code class="language-java">public class UserDaoImpl implements UserDao{
+    /**
+     * 保存用户信息
+     * @param conn
+     * @param user
+     * @throws SQLException
+     */
+    @Override
+    public void save(Connection conn, User user) throws SQLException {
+        PreparedStatement ps = conn.prepareCall(&quot;INSERT INTO tbl_user(name,password,email) VALUES (?,?,?)&quot;);
+        ps.setString(1,user.getName());
+        ps.setString(2,user.getPassword());
+        ps.setString(3,user.getEmail());
+        ps.execute();
+    }
+    // 更新用户信息
+    @Override
+    public void update(Connection conn, Long id, User user) throws SQLException {
+        String updateSql = &quot;UPDATE tbl_user SET name = ?, password = ?, email = ? WHERE id = ?&quot;;
+        PreparedStatement ps = conn.prepareStatement(updateSql);
+        ps.setString(1,user.getName());
+        ps.setString(2,user.getPassword());
+        ps.setString(3,user.getEmail());
+        ps.setLong(4,id);
+    }
+    //删除用户信息
+    @Override
+    public void delete(Connection conn, User user) throws SQLException {
+        String updateSql = &quot;DELETE from tbl_user WHERE id = ?&quot;;
+        PreparedStatement ps = conn.prepareStatement(updateSql);
+        ps.setLong(1,user.getId());
+        ps.execute();
+    }
+}
+</code></pre>
+
+<ul>
+<li>测试类</li>
+</ul>
+
+<pre><code class="language-java">public class UserDaoTest {
+    public static void main (String [] args){
+        Connection conn = null;
+        try{
+            conn = ConnectionFactory.getInstance().makeConnection();
+            conn.setAutoCommit(false);
+            UserDao userDao = new UserDaoImpl();
+            User tom = new User();
+            tom.setName(&quot;Tom&quot;);
+            tom.setPassword(&quot;123&quot;);
+            tom.setEmail(&quot;tom@qq.com&quot;);
+            userDao.save(conn, tom);
+            conn.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            try {
+                conn.rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+        }
+    }
+}
+</code></pre>
+
+
+    
+
+    
+
+
+</article>
+
+
+
+        </div>
+
+        <aside class="col-12 col-lg-3 ml-auto blog-sidebar">
+    
+        
+
+
+<section>
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+        
+        <li>
+            <a href="/post/">19892（李斐文）</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-23/">2018-07-23</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-22/">2018-07-22</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-21/">2018-07-21</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-20/">2018-07-20</a>
+        </li>
+        
+    </ol>
+</section>
+
+    
+    
+        <section>
+    
+        
+    
+        
+    
+        
+    
+</section>
+    
+</aside>
+
+      </div>
+    </div>
+    
+
+    
+      
+
+
+
+
+
+
+<footer class="blog-footer w-100">
+    <nav class="navbar navbar-light bg-light">
+        <p class="w-100 text-center">Hugo template made with ❤ by <a href="https://github.com/Xzya">Xzya</a>, inspired by <a href="https://github.com/alanorth/hugo-theme-bootstrap4-blog">hugo-theme-bootstrap4-blog</a></p>
+        <p class="w-100 text-center"><a href="#">Back to top</a></p>
+    </nav>
+</footer>
+
+    
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="2018-07-19" />
+<meta property="og:description" content="今日学习  java集合/本地文件操作/IO操作/多线程 单例模式  一：集合类 Collection接口  可以理解为一个动态的对象数组，不同的时集合中的对象内容可以任意扩充 特点  性能高 容易扩展和修改  Collection的常用子类  List：可以存放任意数据，可重复（在迭代输出时，不能对集合的元素进行删除操作）  ArrayList：非线程安全，异步处理，性能高 Vector：线程安全，同步处理，性能低  Set：不能重复，可以排序  HashSet TreeSet：有序排放  Queue：先进先出   List&lt;String&gt; lists = null; lists = new ArrayList&lt;&gt;(); lists.add(&quot;A&quot;); lists.add(&quot;B&quot;); for(int i=0; i&lt;lists.size();i&#43;&#43;){ System.out.println(lists.get(i)); } lists.remove(0); // 查询是否存在 System.out.println(&quot;indexOf &quot;&#43;lists.indexOf(&quot;K&quot;)); // 是否为空 System.out.println(&quot;isEmpty &quot;&#43;lists.isEmpty());  Iterator接口（迭代器）  集合输出的标准操作 专门的迭代输出接口，将元素一个个进行判断，判断其是否有内容，如果有内容，就取出 只能单向移动 元素被访问的顺序取决于集合的类型 调用next时，迭代器就越过下一个元素，并返回刚刚越过的那个元素的引用  List&lt;String&gt; list = new ArrayList&lt;&gt;(); list.add(&quot;D&quot;); list.add(&quot;K&quot;); list." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/1/01/2018-07-19/" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2018-07-19"/>
+<meta name="twitter:description" content="今日学习  java集合/本地文件操作/IO操作/多线程 单例模式  一：集合类 Collection接口  可以理解为一个动态的对象数组，不同的时集合中的对象内容可以任意扩充 特点  性能高 容易扩展和修改  Collection的常用子类  List：可以存放任意数据，可重复（在迭代输出时，不能对集合的元素进行删除操作）  ArrayList：非线程安全，异步处理，性能高 Vector：线程安全，同步处理，性能低  Set：不能重复，可以排序  HashSet TreeSet：有序排放  Queue：先进先出   List&lt;String&gt; lists = null; lists = new ArrayList&lt;&gt;(); lists.add(&quot;A&quot;); lists.add(&quot;B&quot;); for(int i=0; i&lt;lists.size();i&#43;&#43;){ System.out.println(lists.get(i)); } lists.remove(0); // 查询是否存在 System.out.println(&quot;indexOf &quot;&#43;lists.indexOf(&quot;K&quot;)); // 是否为空 System.out.println(&quot;isEmpty &quot;&#43;lists.isEmpty());  Iterator接口（迭代器）  集合输出的标准操作 专门的迭代输出接口，将元素一个个进行判断，判断其是否有内容，如果有内容，就取出 只能单向移动 元素被访问的顺序取决于集合的类型 调用next时，迭代器就越过下一个元素，并返回刚刚越过的那个元素的引用  List&lt;String&gt; list = new ArrayList&lt;&gt;(); list.add(&quot;D&quot;); list.add(&quot;K&quot;); list."/>
+
+
+
+    <link rel="canonical" href="https://example.com/1/01/2018-07-19/">
+
+    <title>
+      
+        2018-07-19 | 学习笔记
+      
+    </title>
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link href="https://example.com/css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      <header class="blog-header">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            学习笔记
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/">Home</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/about/">About</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                        <a class="nav-link" href="/contact/">Contact</a>
+                    
+                </li>
+                
+            </ul>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        
+                            <a class="dropdown-item" href="https://example.com/">English</a>
+                        
+                            <a class="dropdown-item" href="https://example.com/es/">Español</a>
+                        
+                            <a class="dropdown-item" href="https://example.com/de/">Deutsch</a>
+                        
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+</header>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8 blog-main">
+
+          
+
+<header>
+    <h2 class="blog-post-title">
+        <a class="text-dark" href="/1/01/2018-07-19/">2018-07-19</a>
+    </h2>
+    
+
+
+<div class="blog-post-date text-secondary">
+    
+    
+        by <span rel="author">Feiwen</span>
+    
+</div>
+
+    
+    
+    <hr>
+</header>
+<article class="blog-post">
+    
+
+<h2 id="今日学习">今日学习</h2>
+
+<ul>
+<li>java集合/本地文件操作/IO操作/多线程</li>
+<li>单例模式</li>
+</ul>
+
+<hr />
+
+<h2 id="一-集合类">一：集合类</h2>
+
+<h3 id="collection接口">Collection接口</h3>
+
+<ul>
+<li>可以理解为一个动态的对象数组，不同的时集合中的对象内容可以任意扩充</li>
+<li>特点
+
+<ul>
+<li>性能高</li>
+<li>容易扩展和修改</li>
+</ul></li>
+<li>Collection的常用子类
+
+<ul>
+<li>List：可以存放任意数据，可重复（在迭代输出时，不能对集合的元素进行删除操作）
+
+<ul>
+<li>ArrayList：非线程安全，异步处理，性能高</li>
+<li>Vector：线程安全，同步处理，性能低</li>
+</ul></li>
+<li>Set：不能重复，可以排序
+
+<ul>
+<li>HashSet</li>
+<li>TreeSet：有序排放</li>
+</ul></li>
+<li>Queue：先进先出</li>
+</ul></li>
+</ul>
+
+<pre><code class="language-java">        List&lt;String&gt; lists = null;
+        lists = new ArrayList&lt;&gt;();
+        lists.add(&quot;A&quot;);
+        lists.add(&quot;B&quot;);
+        for(int i=0; i&lt;lists.size();i++){
+            System.out.println(lists.get(i));
+        }
+        lists.remove(0);
+        // 查询是否存在
+        System.out.println(&quot;indexOf &quot;+lists.indexOf(&quot;K&quot;));
+        // 是否为空
+        System.out.println(&quot;isEmpty &quot;+lists.isEmpty());
+</code></pre>
+
+<h3 id="iterator接口-迭代器">Iterator接口（迭代器）</h3>
+
+<ul>
+<li>集合输出的标准操作</li>
+<li>专门的迭代输出接口，将元素一个个进行判断，判断其是否有内容，如果有内容，就取出</li>
+<li>只能单向移动</li>
+<li>元素被访问的顺序取决于集合的类型</li>
+<li>调用next时，迭代器就越过下一个元素，并返回刚刚越过的那个元素的引用</li>
+</ul>
+
+<pre><code class="language-java">        List&lt;String&gt; list = new ArrayList&lt;&gt;();
+        list.add(&quot;D&quot;);
+        list.add(&quot;K&quot;);
+        list.add(&quot;O&quot;);
+        // iterator方法返回一个实现了Iterator接口的对象，可以使用这个迭代器对象依次访问集合中的元素
+        Iterator&lt;String&gt; iter = list.iterator();
+        //删除第一个元素
+        iter.next();
+        iter.remove();
+        while(((Iterator) iter).hasNext()){
+            String str = iter.next();
+            if (&quot;K&quot;.equals(str)){
+                iter.remove();
+            }else {
+                System.out.println(iter);
+            }
+        }
+//      iter.forEachRemaining(element -&gt; System.out.println(&quot;!&quot;+element));
+</code></pre>
+
+<h3 id="map接口">Map接口</h3>
+
+<ul>
+<li>HashMap</li>
+<li>HashTable</li>
+</ul>
+
+<pre><code class="language-java">
+        Map&lt;String,String&gt; map = new HashMap&lt;&gt;();
+        map.put(&quot;k1&quot;,&quot;jikexy&quot;);
+        map.put(&quot;k2&quot;,&quot;www&quot;);
+        map.put(&quot;k3&quot;,&quot;com&quot;);
+        map.put(&quot;k4&quot;,&quot;java&quot;);
+        if (map.containsKey(&quot;k3&quot;)){  System.out.println(&quot;key存在&quot;);
+        }else {  System.out.println(&quot;key不存在&quot;);   }
+        if (map.containsValue(&quot;firefox&quot;)){
+            System.out.println(&quot;value存在&quot;);
+        }else {  System.out.println(&quot;value不存在&quot;);}
+        // 获取key
+        Set&lt;String&gt; s = map.keySet();
+        Iterator&lt;String&gt; i = ((Set) s).iterator();
+        while(i.hasNext()){  System.out.println(i.next()); }
+        // 获取value
+        Collection&lt;String&gt; c = map.values();
+        Iterator&lt;String&gt; i2 = c.iterator();
+        while (i2.hasNext()){   System.out.println(i2.next()); }
+</code></pre>
+
+<hr />
+
+<h2 id="二-本地文件操作">二：本地文件操作</h2>
+
+<h3 id="文件">文件</h3>
+
+<pre><code class="language-java">        /**
+         * 当前的相对目录都是基于项目文件下的
+         * &quot;../../Hello.txt&quot; 创建在上上一层文件夹中
+         * &quot;../Hello.txt&quot; 创建在上一层文件夹中
+         * &quot;Hello.txt&quot; 创建在相对目录处
+         * &quot;newFiles/Hello.txt&quot; 创建在相对目录下的newFils文件内
+         */
+
+        File file = new File(&quot;newFiles/Hello.txt&quot;);
+
+        /**
+         * 文件的重命名实现文件目录的转换
+         * 文件结构必须处于同一个分区
+         * 文件处于不同的分区，需要使用文件的拷贝
+         */
+
+        if(file.exists()){
+            /**
+             * 此文件可以是空的，不指向任何实质性的文件,并且文件的路径发生了变化
+             * 如果文件已经存在，则文件不会被重命名和转移路径
+             */
+            File nameto = new File(&quot;new Hello2.txt&quot;);
+            file.renameTo(nameto);
+// System.out.println(file.isFile());
+// System.out.println(file.isDirectory());
+// file.delete();
+// System.out.println(&quot;文件删除成功&quot;);
+        }else{
+            System.out.println(&quot;文件不存在&quot;);
+            try{
+                file.createNewFile();
+                System.out.println(&quot;文件创建成功&quot;);
+            }catch (IOException e){
+                System.out.println(&quot;文件无法创建&quot;);
+            }
+        }
+</code></pre>
+
+<h3 id="文件夹">文件夹</h3>
+
+<pre><code class="language-java">        File folder = new File(&quot;my new folder&quot;);
+        if (folder.mkdir()){
+            System.out.println(&quot;文件夹创建完成&quot;);
+        }else{
+            if(folder.exists()){   System.out.println(&quot;文件夹已经存在&quot;);
+            }else{     System.out.println(&quot;文件夹创建失败&quot;); }
+        }
+        // 空文件夹才能被删除
+        if (folder.delete()){
+            System.out.println(&quot;done&quot;); 
+        }else { System.out.println(&quot;fail&quot;);  }
+        //改名
+        File f1 = new File(&quot;my new folder&quot;); // 此文件必须存在才能改名
+        f1.mkdirs(); //创建多级目录
+        File f2 = new File(&quot;rename folder&quot;);
+        if (f1.renameTo(f2)){  System.out.println(&quot;done&quot;);
+        }else{    System.out.println(&quot;fail&quot;); }
+</code></pre>
+
+<h3 id="遍历文件夹">遍历文件夹</h3>
+
+<pre><code class="language-java">public static void printFiles(File dir, int tab){
+        if (dir.isDirectory()){
+            File next [] = dir.listFiles();
+            for (int i =0; i&lt;next.length ; i++){
+                for (int j=0; j&lt; tab; j++){
+                    System.out.print(&quot;|--&quot;);
+                }
+                System.out.println(next[i].getName());
+                if (next[i].isDirectory()){
+                    printFiles(next[i],tab++);
+                }
+            }
+        }
+</code></pre>
+
+<hr />
+
+<h2 id="三-io操作">三：IO操作</h2>
+
+<ul>
+<li>基本功能：读和写</li>
+<li>字节流：以“Stream”结尾；可以处理所有类型的数据，在读取时，读到一个字节就返回一个字节。</li>
+<li>字符流：以“Reader”或“Writer”结尾；仅能处理纯文本数据，在读取时，速到一个或多个字节，先查找指定的编码表，然后将查到的字符返回。</li>
+</ul>
+
+<hr />
+
+<h2 id="四-多线程编程">四：多线程编程</h2>
+
+<h3 id="线程的实现">线程的实现</h3>
+
+<ul>
+<li>继承Thread类</li>
+<li>实现Runnable接口</li>
+</ul>
+
+<pre><code class="language-java">/**
+ * 线程实现的两种方法：
+ * 1、继承Thread类
+ * 2、实现Runnable接口
+ * sleep/yield/join/setPriority/getName
+ */
+class MyThread extends Thread{
+    private String name;
+    public MyThread(String name){
+        this.name = name;
+    }
+    public void run(){
+        for(int i =0;i&lt;10;i++){
+            System.out.println(name+&quot;:&quot;+i);
+        }
+    }
+}
+class MyRunnable implements Runnable{
+    private String name;
+    public MyRunnable(String name){
+        this.name = name;
+    }
+    @Override
+    public void run() {
+        for(int i=0; i&lt;100;i++){
+// System.out.println(&quot;当前线程对象：&quot;+Thread.currentThread().getName());
+            System.out.println(this.name+&quot;;&quot;+i);
+// try {
+// Thread.sleep(100);
+// } catch (InterruptedException e) {
+// e.printStackTrace();
+// }
+            if (i == 10){
+                System.out.println(&quot;礼让&quot;);
+                Thread.yield();
+            }
+        }
+    }
+}
+public class ThreadDemo {
+    public static void main(String [] args){
+        TestMyThread();
+        TestMyRunnable();
+    }
+    public static void TestMyThread(){
+        MyThread t1 = new MyThread(&quot;A&quot;);
+        MyThread t2 = new MyThread(&quot;B&quot;);
+        MyThread t3 = new MyThread(&quot;C&quot;);
+        // 设置优先级
+        t1.setPriority(Thread.MIN_PRIORITY);
+        t2.setPriority(Thread.NORM_PRIORITY);
+        t3.setPriority(Thread.MAX_PRIORITY);
+        // 通过start启动线程
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+    public static void TestMyRunnable(){
+        MyRunnable r1 = new MyRunnable(&quot;a&quot;);
+        MyRunnable r2 = new MyRunnable(&quot;b&quot;);
+        Thread t3 = new Thread(r1);
+        Thread t4 = new Thread(r2);
+        System.out.println(t3.isAlive());
+        t3.start();
+        System.out.println(t3.isAlive());
+        t3.start();
+        for (int i = 0;i&lt;50;i++){
+            if (i&gt;10){
+                try {
+                    t3.join(); //强行执行,作用于t1,t2
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            System.out.println(&quot;主线程：&quot;+i);
+        }
+    }
+}
+</code></pre>
+
+<h2 id="3-单例模式">3.单例模式</h2>
+
+<pre><code class="language-java">/**
+ * 单例模式Singleton
+ * 应用场合：有些对象只需要一个就足够了，如古代皇帝
+ * 作用：保证整个应用程序中某个实例有且只有一个
+ * 类型：饿汉模式、懒汉模式
+ */
+//饿汉模式
+class Singleton{
+    // 1、将构造方法私有化，不允许外部直接创建对象
+    private Singleton(){  }
+    // 2、创建类的唯一实例，使用private static修饰
+    private static Singleton instence = new Singleton();
+    // 3、提供一个用于获取实例的方法，使用public static
+    public static Singleton getInstence(){
+        return instence;
+    }
+}
+// 懒汉模式
+class Singleton2{
+    // 1、将构造方法私有化，不允许外部直接创建对象
+    private Singleton2(){
+    }
+    // 2、创建类的唯一实例，使用private static修饰
+    private static Singleton2 instance;
+    // 3、提供一个用于获取实例的方法，使用public static
+    public static Singleton2 getInstance(){
+        if(instance == null){
+            instance = new Singleton2();
+        }
+        return instance;
+    }
+}
+public class SingletonDemo {
+    public static void main(String [] args){
+        Singleton s1 = Singleton.getInstence();
+        Singleton s2 = Singleton.getInstence();
+        if (s1 == s2){
+            System.out.println(&quot;s1和s2是同一个实例&quot;);
+        }
+        Singleton2 s3 = Singleton2.getInstance();
+        Singleton2 s4 = Singleton2.getInstance();
+        if (s3 == s4){
+            System.out.println(&quot;s3和s4是同一个实例&quot;);
+        }
+    }
+}
+</code></pre>
+
+<ul>
+<li>区别：
+饿汉：线程安全，加载类时比较慢，但运行时获取对象的速度比较快；
+懒汉：线程不安全，加载类时比较快，但运行时获取对象的速度比较慢；</li>
+</ul>
+
+
+    
+
+    
+
+
+</article>
+
+
+
+        </div>
+
+        <aside class="col-12 col-lg-3 ml-auto blog-sidebar">
+    
+        
+
+
+<section>
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+        
+        <li>
+            <a href="/post/">19892（李斐文）</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-23/">2018-07-23</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-22/">2018-07-22</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-21/">2018-07-21</a>
+        </li>
+        
+        <li>
+            <a href="/1/01/2018-07-20/">2018-07-20</a>
+        </li>
+        
+    </ol>
+</section>
+
+    
+    
+        <section>
+    
+        
+    
+        
+    
+        
+    
+</section>
+    
+</aside>
+
+      </div>
+    </div>
+    
+
+    
+      
+
+
+
+
+
+
+<footer class="blog-footer w-100">
+    <nav class="navbar navbar-light bg-light">
+        <p class="w-100 text-center">Hugo template made with ❤ by <a href="https://github.com/Xzya">Xzya</a>, inspired by <a href="https://github.com/alanorth/hugo-theme-bootstrap4-blog">hugo-theme-bootstrap4-blog</a></p>
+        <p class="w-100 text-center"><a href="#">Back to top</a></p>
+    </nav>
+</footer>
+
+    
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
